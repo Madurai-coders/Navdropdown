@@ -1,39 +1,57 @@
 import "./respons_nav.css";
 
 function Respons_nav() {
+
+  const addclass = () => {
+    document.querySelector("#btn").classList.toggle("inactive");
+
+    document.querySelector("#sidebar").classList.toggle("close");
+
+    const hide = document.querySelectorAll("#logo");
+    for (let i = 0; i < hide.length; i++) {
+        hide[i].classList.toggle("hidden");
+      }
+  };
+
   return (
     <>
-      <div className="sidebar">
-        <div className="logo_cnt">
+      <div className="sidebar" id="sidebar">
+        <div className="logo_cnt" >
           <div className="logo">
-            <i class="lg fa fa-code"></i>
-            <span className="logo_name">CodingLab</span>
+            <i  class="lg fa fa-code" id='logo'></i>
+            <span className="logo_name" id='logo' >CodingLab</span>
           </div>
-          <i class=" btn fa fa-bars"></i>
+          <i onClick={addclass} id="btn" className=" btn fa fa-bars"></i>
         </div>
         <ul className="nav_list">
           <li>
             <a href="#">
-              <i class=" search fa fa-search"></i>
+              <i  class=" search fa fa-search"></i>
               <input type="text" placeholder="Search..."></input>
             </a>
-            <span className="tooltips">Search</span>
+            <span id="tooltips" className=" tooltips">
+              Search
+            </span>
           </li>
           <li>
             <a href="#">
               <i class="fa fa-user"></i>
-              <span className="link_name">User</span>
+              <span className="link_name" id="link_name_close">
+                User
+              </span>
             </a>
-            <span className="tooltips">User</span>
+            <span id="tooltips" className="tooltips ">
+              User
+            </span>
           </li>
           <li>
             <a href="#">
               <i class="fa fa-comments"></i>
-              <span className="link_name">Message</span>
+              <span className="link_name" id="link_name_close">Message</span>
             </a>
-            <span className="tooltips">Message</span>
+            <span id="tooltips" className="tooltips">Message</span>
           </li>
-          <li>
+         {/*  <li>
             <a href="#">
               <i class="fa fa-calendar"></i>
               <span className="link_name">Analytics</span>
@@ -68,9 +86,9 @@ function Respons_nav() {
               <span className="link_name">Settings</span>
             </a>
             <span className="tooltips">Settings</span>
-          </li>
+          </li> */}
         </ul>
-        <div className="profile_cnt">
+        {/* <div className="profile_cnt">
           <div className="profile">
             <div className="profile_details">
               <img
@@ -86,7 +104,7 @@ function Respons_nav() {
             <i class=" logout fa fa-arrow-left"></i>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

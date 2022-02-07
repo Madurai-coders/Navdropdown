@@ -13,6 +13,7 @@
     display: none;
 }
 
+
 .sidebar {
   width: 240px;
   height: 100%;
@@ -24,11 +25,13 @@
   transition: width 0.3s;
   transition-timing-function: ease;
 }
+
 .sidebar.close {
   width: 78px;
   transition: width 0.3s;
   transition-timing-function: ease;
 }
+
 .sidebar .logo_cnt .logo {
   display: flex;
   width: 100%;
@@ -36,10 +39,12 @@
   color: #fff;
   align-items: center;
 }
+
 .logo_cnt .logo i {
   font-size: 32px;
   margin-right: 10px;
 }
+
 .logo_cnt .logo .logo_name {
   font-size: 20px;
   font-weight: 400;
@@ -62,15 +67,18 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
 .sidebar ul {
   margin-top: 50px;
 }
+
 .sidebar ul li {
   height: 70px;
   position: relative;
   width: 100%;
   margin: 0 5px;
 }
+
 .sidebar ul li a {
   color: #fff;
   display: flex;
@@ -79,11 +87,12 @@
   transition: all 0.4s ease;
   border-radius: 12px;
 }
+
 .sidebar ul li a:hover {
   color: black;
   background-color: #fff;
+ 
 }
-
 .sidebar ul li a i {
   height: 50px;
   line-height: 50px;
@@ -91,6 +100,7 @@
   border-radius: 12px;
   text-align: center;
 }
+
 .sidebar ul li input {
   position: absolute;
   height: 75%;
@@ -104,6 +114,7 @@
   color: #fff;
   padding-left: 50px;
 }
+
 .sidebar ul li .search {
   position: absolute;
   z-index: 90;
@@ -111,6 +122,7 @@
   color: #fff;
   font-size: 19px;
 }
+
 .sidebar .profile_cnt {
   color: #fff;
   position: absolute;
@@ -118,6 +130,10 @@
   left: 0;
   width: 100%;
 }
+.sidebar .profile_cnt .hide{
+       display: none;
+}
+
 .sidebar .profile_cnt .profile {
   position: relative;
   padding: 10px 6px;
@@ -125,10 +141,17 @@
   border-radius: 12px;
   background-color: rgb(31, 30, 30);
 }
+.sidebar .profile_cnt .profile.profile_1{
+  padding: 10px 6px;
+  height: 60px;
+ margin-right: 17px;
+} 
+
 .profile_cnt .profile .profile_details {
   display: flex;
   align-items: center;
 }
+
 .profile .profile_details .pfl {
   height: 45px;
   width: 45px;
@@ -137,17 +160,26 @@
   position: absolute;
   bottom: 7px;
 }
+
 .profile .profile_details .profile_name {
   margin-right: 50px;
   font-size: 15px;
   font-weight: 400;
 }
+.profilecnt_none{
+  display: none;   
+}
+
 .profile .profile_details .name_job {
   margin-left: 60px;
 }
-.profile .profile_details .job {
+
+.profile .profile_details .job{
   font-size: 12px;
 }
+
+
+
 .profile .logout {
   position: absolute;
   top: 5px;
@@ -157,6 +189,9 @@
   line-height: 50px;
   font-size: 20px;
 }
+
+
+
 
 .sidebar .nav_list li {
   list-style: none;

@@ -16,8 +16,8 @@
 
 .sidebar {
   width: 240px;
-  height: 100%;
-  position: fixed;
+  height: 100vh;
+  overflow: hidden;
   top: 0;
   left: 0;
   padding: 6px 14px;
@@ -51,11 +51,11 @@
 }
 
 .sidebar .btn {
-  position: absolute;
+  position: relative;
   color: #fff;
   font-size: 20px;
   left: 90%;
-  top: 1px;
+  bottom: 55px;
   height: 50px;
   width: 50px;
   text-align: center;
@@ -69,7 +69,7 @@
 }
 
 .sidebar ul {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .sidebar ul li {
@@ -124,11 +124,13 @@
 }
 
 .sidebar .profile_cnt {
+
   color: #fff;
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  width: 100%;
+left: 0px;
+position: relative;
+top: 100px;
+
+ 
 }
 .sidebar .profile_cnt .hide{
        display: none;
@@ -189,7 +191,14 @@
   line-height: 50px;
   font-size: 20px;
 }
-
+.profile .logout.change{
+  position: absolute;
+  left: 83%;
+  transform: translateX(-50%);
+  min-width: 50px;
+  line-height: 50px;
+  font-size: 20px;
+}
 
 
 

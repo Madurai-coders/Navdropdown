@@ -1,4 +1,6 @@
 import "./respons_nav.css";
+import { Link } from "react-router-dom";
+
 
 function Respons_nav() {
 
@@ -7,7 +9,7 @@ function Respons_nav() {
     document.querySelector("#sidebar").classList.toggle("close");
     document.querySelector("#logo").classList.toggle("hidden");
     document.querySelector("#logo_1").classList.toggle("hidden");
-    document.querySelector("#profile").classList.toggle("profile_1");
+    document.querySelector("#logout").classList.toggle("change");
 
 
 
@@ -23,7 +25,7 @@ function Respons_nav() {
     document.querySelector("#logo_1").classList.remove("hidden");
     document.querySelector("#btn").classList.remove("inactive"); 
     document.querySelector("#sidebar.close").classList.toggle("close");
-    document.querySelector("#profile").classList.toggle("profile_1");
+    document.querySelector("#logout").classList.toggle("change");
 
 
    
@@ -55,6 +57,7 @@ function Respons_nav() {
               Search
             </span>
           </li>
+          <Link to='/user'>
           <li>
             <a href="#">
               <i class="fa fa-user"></i>
@@ -62,10 +65,12 @@ function Respons_nav() {
                 User
               </span>
             </a>
+          
             <span id="tooltips" className="tooltips ">
               User
             </span>
           </li>
+          </Link>
           <li>
             <a href="#">
               <i class="fa fa-comments"></i>
@@ -95,7 +100,7 @@ function Respons_nav() {
             </a>
             <span className="tooltips">Saved</span>
           </li>
-          <li>
+          <li className="set mb-5">
             <a href="#">
               <i class="fa fa-cog"></i>
               <span className="link_name">Settings</span>
@@ -107,17 +112,18 @@ function Respons_nav() {
           <div className="profile" id="profile">
             <div className="profile_details">
               <img
-      
+      id="hide"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSoQFvYAr4KD4S-iecBnmLmPf7zuyFyHkd8w&usqp=CAU"
                 className="pfl"
                 alt=""
               ></img>
              <div className="name_job">
+
               <div id="hide" className="profile_name">PriyaDharshini</div>
               <div id="hide" className="job">Web designer</div>
               </div>
 
-            <i id="hide" class=" logout fa fa-arrow-left"></i>
+            <i id="logout" class=" logout fa fa-arrow-left"></i>
             </div>
           </div>
         </div> 

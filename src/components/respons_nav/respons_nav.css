@@ -193,7 +193,7 @@ top: 100px;
 }
 .profile .logout.change{
   position: absolute;
-  left: 83%;
+  left: 80%;
   transform: translateX(-50%);
   min-width: 50px;
   line-height: 50px;

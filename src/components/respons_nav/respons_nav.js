@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 function Respons_nav() {
 
   const addclass = () => {
+
+    
     document.querySelector("#btn").classList.toggle("inactive");
     document.querySelector("#sidebar").classList.toggle("close");
     document.querySelector("#logo").classList.toggle("hidden");

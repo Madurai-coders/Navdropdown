@@ -17,21 +17,27 @@
 .sidebar {
   width: 240px;
   height: 100vh;
-  overflow: hidden;
   top: 0;
   left: 0;
   padding: 6px 14px;
   background-color: black;
   transition: width 0.3s;
   transition-timing-function: ease;
+
 }
 
 .sidebar.close {
+ 
   width: 78px;
   transition: width 0.3s;
   transition-timing-function: ease;
 }
 
+ .sidebar .logo_cnt {
+  position: fixed;
+  top: 0;
+ 
+} 
 .sidebar .logo_cnt .logo {
   display: flex;
   width: 100%;
@@ -54,7 +60,7 @@
   position: relative;
   color: #fff;
   font-size: 20px;
-  left: 90%;
+  left: 130%;
   bottom: 55px;
   height: 50px;
   width: 50px;
@@ -69,8 +75,10 @@
 }
 
 .sidebar ul {
-  margin-top: 20px;
+  margin-top: 120px;
+
 }
+
 
 .sidebar ul li {
   height: 70px;
@@ -124,20 +132,16 @@
 }
 
 .sidebar .profile_cnt {
-
+position: relative;
+top: 220px;
   color: #fff;
 left: 0px;
-position: relative;
-top: 100px;
-
- 
 }
 .sidebar .profile_cnt .hide{
        display: none;
 }
 
 .sidebar .profile_cnt .profile {
-  position: relative;
   padding: 10px 6px;
   height: 60px;
   border-radius: 12px;
@@ -183,9 +187,9 @@ top: 100px;
 
 
 .profile .logout {
-  position: absolute;
   top: 5px;
-  left: 98%;
+left: 98%;
+position: absolute;
   transform: translateX(-50%);
   min-width: 50px;
   line-height: 50px;
@@ -234,4 +238,69 @@ top: 100px;
   top: 10%;
   transition: all 0.3s ease;
   opacity: 1;
+}
+/* ::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track{
+  background: transparent!important;
+}
+::-webkit-scrollbar-thumb{
+  background: #fff;
+  border-radius: 10px;
+} */
+
+@media only screen and (max-width: 1655px) {
+
+  .sidebar .profile_cnt {
+  position: relative;
+  top: 120px;
+  }}
+
+@media only screen and (max-width: 1612px) {
+
+.sidebar .profile_cnt {
+position: relative;
+top: 120px;
+}}
+
+@media only screen and (max-width: 1556px) {
+
+  .sidebar .profile_cnt {
+  position: relative;
+  top: 120px;
+  }}
+  @media only screen and (max-width: 1514px) {
+
+    .sidebar .profile_cnt {
+    position: relative;
+    top: 90px;
+    }}
+  
+@media only screen and (max-width: 1242px) {
+
+  .sidebar .profile_cnt {
+  position: relative;
+  top: -35px;
+  
+  }
+  
+}
+@media only screen and (max-width: 913px) {
+
+  .sidebar .profile_cnt {
+  position: relative;
+  top: -28px;
+  
+  }
+  
+}
+@media only screen and (max-width: 361px) {
+
+  .sidebar .profile_cnt {
+  position: relative;
+  top: -32px;
+  
+  }
+  
 }

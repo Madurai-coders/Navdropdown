@@ -1,4 +1,6 @@
 .user{
        height: 100vh;
        background-color: blue;
+       position: fixed;
+       width: 100vw;
 }

@@ -16,7 +16,7 @@
 
 .sidebar {
   width: 240px;
-  height: 100vh;
+  height: 110vh;
   top: 0;
   left: 0;
   padding: 6px 14px;
@@ -239,7 +239,7 @@ position: absolute;
   transition: all 0.3s ease;
   opacity: 1;
 }
-/* ::-webkit-scrollbar {
+ ::-webkit-scrollbar {
   width: 5px;
 }
 ::-webkit-scrollbar-track{
@@ -248,9 +248,9 @@ position: absolute;
 ::-webkit-scrollbar-thumb{
   background: #fff;
   border-radius: 10px;
-} */
+} 
 
-@media only screen and (max-width: 1655px) {
+/* @media only screen and (max-width: 1655px) {
 
   .sidebar .profile_cnt {
   position: relative;
@@ -303,4 +303,4 @@ top: 120px;
   
   }
   
-}
+} */

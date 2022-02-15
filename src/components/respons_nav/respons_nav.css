@@ -5,46 +5,38 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
 }
-.sidebar.close .link_name {
-  display: none;
-}
-.hidden{
-    display: none;
-}
-
 
 .sidebar {
-  width: 240px;
-  height: 100vh!important;
+  width: 78px;
+  height: 100vh !important;
   top: 0;
   left: 0;
   padding: 6px 14px;
   background-color: black;
   transition: width 0.3s;
   transition-timing-function: ease;
-
 }
-
 .sidebar.close {
- 
-  width: 78px;
+  width: 240px;
   transition: width 0.3s;
   transition-timing-function: ease;
 }
 
- .sidebar .logo_cnt {
+.sidebar .logo_cnt {
   position: fixed;
   top: 0;
- 
-} 
+}
 .sidebar .logo_cnt .logo {
   display: flex;
   width: 100%;
   height: 50px;
   color: #fff;
   align-items: center;
+  opacity: 0;
+}
+.sidebar.close .logo_cnt .logo {
+  opacity: 1;
 }
 
 .logo_cnt .logo i {
@@ -58,11 +50,10 @@
 }
 
 .sidebar .btn {
-
-position: relative;
+  position: relative;
   color: #fff;
   font-size: 20px;
-  left: 130%;
+  left: 15%;
   bottom: 55px;
   height: 50px;
   width: 50px;
@@ -70,17 +61,16 @@ position: relative;
   line-height: 50px;
   transform: translateX(-50%);
 }
-
 .sidebar .inactive {
-  left: 50%;
+  left: 130%;
   transform: translateX(-50%);
 }
-
+.sidebar.close .link_name {
+  opacity: 1;
+}
 .sidebar ul {
   margin-top: 120px;
-
 }
-
 
 .sidebar ul li {
   height: 70px;
@@ -101,8 +91,8 @@ position: relative;
 .sidebar ul li a:hover {
   color: black;
   background-color: #fff;
- 
 }
+
 .sidebar ul li a i {
   height: 50px;
   line-height: 50px;
@@ -134,13 +124,13 @@ position: relative;
 }
 
 .sidebar .profile_cnt {
-position: relative;
-top: 220px;
+  position: relative;
+  top: 220px;
   color: #fff;
-left: 0px;
+  left: 0px;
 }
-.sidebar .profile_cnt .hide{
-       display: none;
+.sidebar .profile_cnt .hide {
+  display: none;
 }
 
 .sidebar .profile_cnt .profile {
@@ -149,13 +139,19 @@ left: 0px;
   border-radius: 12px;
   background-color: rgb(31, 30, 30);
 }
-.sidebar .profile_cnt .profile.profile_1{
+.sidebar .profile_cnt .profile.profile_1 {
   padding: 10px 6px;
   height: 60px;
- margin-right: 17px;
-} 
+  margin-right: 17px;
+}
 
 .profile_cnt .profile .profile_details {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+}
+.sidebar.close .profile .profile_details {
+  opacity: 1;
   display: flex;
   align-items: center;
 }
@@ -174,30 +170,27 @@ left: 0px;
   font-size: 15px;
   font-weight: 400;
 }
-.profilecnt_none{
-  display: none;   
-}
 
 .profile .profile_details .name_job {
   margin-left: 60px;
 }
 
-.profile .profile_details .job{
+.profile .profile_details .job {
   font-size: 12px;
 }
 
-
-
-.profile .logout {
+.profile .logout.change {
   top: 5px;
-left: 98%;
-position: absolute;
+  left: 98%;
+  position: absolute;
   transform: translateX(-50%);
   min-width: 50px;
   line-height: 50px;
   font-size: 20px;
 }
-.profile .logout.change{
+.profile .logout {
+  position: relative;
+  bottom: 4px;
   position: absolute;
   left: 80%;
   transform: translateX(-50%);
@@ -205,8 +198,6 @@ position: absolute;
   line-height: 50px;
   font-size: 20px;
 }
-
-
 
 .sidebar .nav_list li {
   list-style: none;
@@ -218,98 +209,103 @@ position: absolute;
 }
 
 /* tooltip */
-.sidebar li .tooltips{
+.sidebar ul li .tooltips {
   position: absolute;
-  left: 170px;
+  left: 160px;
   top: 0%;
-  transition: 0s;
   border-radius: 6px;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   height: 35px;
   width: 122px;
   line-height: 35px;
-  background-color: #fff !important;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  opacity: 0;
-  pointer-events: none;
-  color: black;
-
-  
-}
-
-
-.sidebar.close li:hover .tooltips{
+  background-color: #fff;
+  transition: 0s;
   opacity: 1;
-  top: 50%;
-  transition: all 0.4s ease;
-  visibility: visible;
-  z-index: 999;
+  text-align: center;
+  display: none;
 }
 
- .scroll{
-  overflow-y: scroll;
- overflow-x: hidden;
-  height: 700px;
-} 
+.sidebar ul li:hover .tooltips {
+  top: 50%;
+  display: block;
+}
 
- ::-webkit-scrollbar {
+.sidebar.close ul li .tooltips {
+  display: none;
+}
+
+.scroll {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 700px;
+}
+
+::-webkit-scrollbar {
   width: 5px;
   border-radius: 10px;
-} 
+}
 @media only screen and (max-width: 1670px) {
-  .scroll{
+  .scroll {
     overflow-y: scroll;
     overflow-x: hidden;
     height: 630px;
   }
 }
 @media only screen and (max-width: 1556px) {
-  .scroll{
+  .scroll {
     overflow-y: scroll;
     overflow-x: hidden;
     height: 640px;
   }
 }
 @media only screen and (max-width: 1548px) {
-  .scroll{
+  .scroll {
     overflow-y: scroll;
     overflow-x: hidden;
     height: 600px;
   }
 }
 @media only screen and (max-width: 1492px) {
-  .scroll{
+  .scroll {
     overflow-y: scroll;
     overflow-x: hidden;
     height: 590px;
   }
 }
 @media only screen and (max-width: 1472px) {
-  .scroll{
+  .scroll {
     overflow-y: scroll;
     overflow-x: hidden;
     height: 560px;
   }
 }
 @media only screen and (max-width: 1427px) {
-  .scroll{
+  .scroll {
     overflow-y: scroll;
     overflow-x: hidden;
     height: 520px;
   }
 }
 @media only screen and (max-width: 1344px) {
-  .scroll{
+  .scroll {
     overflow-y: scroll;
     overflow-x: hidden;
     height: 470px;
   }
 }
 @media only screen and (max-width: 1252px) {
-  .scroll{
+  .scroll {
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 420px;
+    height: 400px;
   }
+}
+@media only screen and (max-width: 1242px) {
+  .scroll{
+    display: none;
+  }
+  .sidebar.close .scroll{
+    display: block;
+  }
+ 
 }

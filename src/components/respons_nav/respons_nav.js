@@ -4,32 +4,25 @@ import { Link } from "react-router-dom";
 function Respons_nav() {
   const addclass = () => {
     document.querySelector("#btn").classList.toggle("inactive");
+
     document.querySelector("#sidebar").classList.toggle("close");
-    document.querySelector("#logo").classList.toggle("hidden");
-    document.querySelector("#logo_1").classList.toggle("hidden");
-    document.querySelector("#logout").classList.toggle("change");
+  
+     document.querySelector("#logout").classList.toggle("change");
+    
 
 
-    const hide = document.querySelectorAll("#hide");
-    for (let i = 0; i < hide.length; i++) {
-      hide[i].classList.toggle("profilecnt_none");
-    }
+    
   };
 
- 
+  
  
   
   const addfnt = () => {
-    document.querySelector("#logo").classList.remove("hidden");
-    document.querySelector("#logo_1").classList.remove("hidden");
-    document.querySelector("#btn").classList.remove("inactive");
-    document.querySelector("#sidebar.close").classList.toggle("close");
-    document.querySelector("#logout").classList.toggle("change");
 
-    const show = document.querySelectorAll("#hide");
-    for (let i = 0; i < show.length; i++) {
-      show[i].classList.remove("profilecnt_none");
-    }
+     document.querySelector("#sidebar").classList.toggle("close");
+     document.querySelector("#btn").classList.toggle("inactive");
+     document.querySelector("#logout").classList.toggle("change");
+
    
   
 };
@@ -59,7 +52,7 @@ function Respons_nav() {
               <i onClick={addfnt} id="bar" class=" search fa fa-search"></i>
               <input type="text" placeholder="Search..."></input>
             </a>
-            <span id="tooltip" className="tooltips">
+            <span  id="tooltip" className="tooltips">
               Search
             </span>
           </li>
@@ -149,9 +142,9 @@ function Respons_nav() {
                     Web designer
                   </div>
                 </div>
-
+                </div>
                 <i id="logout" class=" logout fa fa-arrow-left"></i>
-              </div>
+            
             </div>
             
           </div>

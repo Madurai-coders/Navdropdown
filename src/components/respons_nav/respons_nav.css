@@ -5,6 +5,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
 }
 .sidebar.close .link_name {
   display: none;
@@ -16,7 +17,7 @@
 
 .sidebar {
   width: 240px;
-  height: 110vh;
+  height: 100vh!important;
   top: 0;
   left: 0;
   padding: 6px 14px;
@@ -57,7 +58,8 @@
 }
 
 .sidebar .btn {
-  position: relative;
+
+position: relative;
   color: #fff;
   font-size: 20px;
   left: 130%;
@@ -217,10 +219,9 @@ position: absolute;
 
 /* tooltip */
 .sidebar li .tooltips{
-    position: absolute;
+  position: absolute;
   left: 170px;
   top: 0%;
-
   transition: 0s;
   border-radius: 6px;
   transform: translateX(-50%);
@@ -232,75 +233,83 @@ position: absolute;
   text-align: center;
   opacity: 0;
   pointer-events: none;
+  color: black;
+
+  
 }
 
-.sidebar.close li:hover .tooltips {
-  top: 10%;
-  transition: all 0.3s ease;
+
+.sidebar.close li:hover .tooltips{
   opacity: 1;
+  top: 50%;
+  transition: all 0.4s ease;
+  visibility: visible;
+  z-index: 999;
 }
- ::-webkit-scrollbar {
-  width: 5px;
-}
-::-webkit-scrollbar-track{
-  background: transparent!important;
-}
-::-webkit-scrollbar-thumb{
-  background: #fff;
-  border-radius: 10px;
+
+ .scroll{
+  overflow-y: scroll;
+ overflow-x: hidden;
+  height: 700px;
 } 
 
-/* @media only screen and (max-width: 1655px) {
-
-  .sidebar .profile_cnt {
-  position: relative;
-  top: 120px;
-  }}
-
-@media only screen and (max-width: 1612px) {
-
-.sidebar .profile_cnt {
-position: relative;
-top: 120px;
-}}
-
+ ::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 10px;
+} 
+@media only screen and (max-width: 1670px) {
+  .scroll{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 630px;
+  }
+}
 @media only screen and (max-width: 1556px) {
-
-  .sidebar .profile_cnt {
-  position: relative;
-  top: 120px;
-  }}
-  @media only screen and (max-width: 1514px) {
-
-    .sidebar .profile_cnt {
-    position: relative;
-    top: 90px;
-    }}
-  
-@media only screen and (max-width: 1242px) {
-
-  .sidebar .profile_cnt {
-  position: relative;
-  top: -35px;
-  
+  .scroll{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 640px;
   }
-  
 }
-@media only screen and (max-width: 913px) {
-
-  .sidebar .profile_cnt {
-  position: relative;
-  top: -28px;
-  
+@media only screen and (max-width: 1548px) {
+  .scroll{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 600px;
   }
-  
 }
-@media only screen and (max-width: 361px) {
-
-  .sidebar .profile_cnt {
-  position: relative;
-  top: -32px;
-  
+@media only screen and (max-width: 1492px) {
+  .scroll{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 590px;
   }
-  
-} */
+}
+@media only screen and (max-width: 1472px) {
+  .scroll{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 560px;
+  }
+}
+@media only screen and (max-width: 1427px) {
+  .scroll{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 520px;
+  }
+}
+@media only screen and (max-width: 1344px) {
+  .scroll{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 470px;
+  }
+}
+@media only screen and (max-width: 1252px) {
+  .scroll{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 420px;
+  }
+}

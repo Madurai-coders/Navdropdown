@@ -9,12 +9,16 @@ function Respons_nav() {
     document.querySelector("#logo_1").classList.toggle("hidden");
     document.querySelector("#logout").classList.toggle("change");
 
+
     const hide = document.querySelectorAll("#hide");
     for (let i = 0; i < hide.length; i++) {
       hide[i].classList.toggle("profilecnt_none");
     }
   };
 
+ 
+ 
+  
   const addfnt = () => {
     document.querySelector("#logo").classList.remove("hidden");
     document.querySelector("#logo_1").classList.remove("hidden");
@@ -26,7 +30,10 @@ function Respons_nav() {
     for (let i = 0; i < show.length; i++) {
       show[i].classList.remove("profilecnt_none");
     }
-  };
+   
+  
+};
+
 
   return (
     <>
@@ -40,18 +47,25 @@ function Respons_nav() {
           </div>
           <i onClick={addclass} id="btn" className="btn fa fa-bars"></i>
         </div>
+       
+
+
+
 
         <ul className="nav_list">
+        
           <li>
             <a href="#">
               <i onClick={addfnt} id="bar" class=" search fa fa-search"></i>
               <input type="text" placeholder="Search..."></input>
             </a>
-            <span id="tooltips" className=" tooltips">
+            <span id="tooltip" className="tooltips">
               Search
             </span>
           </li>
+          <div className="scroll">
           <Link to="/user"style={{textDecoration:'none'}}>
+            
             <li>
               <a href="#">
                 <i class="fa fa-user"></i>
@@ -60,7 +74,7 @@ function Respons_nav() {
                 </span>
               </a>
 
-              <span id="tooltips" className="tooltips ">
+              <span id="tooltip" className="tooltips">
                 User
               </span>
             </li>
@@ -73,7 +87,7 @@ function Respons_nav() {
                 Message
               </span>
             </a>
-            <span id="tooltips" className="tooltips">
+            <span id="tooltip" className="tooltips">
               Message
             </span>
           </li>
@@ -84,7 +98,7 @@ function Respons_nav() {
               <i class="fa fa-calendar"></i>
               <span className="link_name">Analytics</span>
             </a>
-            <span className="tooltips">Analytics</span>
+            <span id="tooltip" className="tooltips">Analytics</span>
           </li>
 </Link>
 <Link to="/order"style={{textDecoration:'none'}}>
@@ -93,7 +107,7 @@ function Respons_nav() {
               <i class="fa fa-shopping-cart"></i>
               <span className="link_name">Order</span>
             </a>
-            <span className="tooltips">Order</span>
+            <span id="tooltip" className="tooltips">Order</span>
           </li>
           </Link>
           <Link to="/saved"style={{textDecoration:'none'}}>
@@ -102,19 +116,22 @@ function Respons_nav() {
               <i class="fa fa-heart"></i>
               <span className="link_name">Saved</span>
             </a>
-            <span className="tooltips">Saved</span>
+            <span id="tooltip" className="tooltips">Saved</span>
           </li>
           </Link>
+          
           <Link to="/settings"style={{textDecoration:'none'}}>
           <li>
             <a href="#">
               <i class="fa fa-cog"></i>
               <span className="link_name">Settings</span>
             </a>
-            <span className="tooltips">Settings</span>
+            <span id="tooltip" className="tooltips">Settings</span>
           </li>
+       
           </Link>
-          </ul>
+        
+          
           <div className="profile_cnt">
             <div className="profile" id="profile">
               <div className="profile_details">
@@ -136,10 +153,15 @@ function Respons_nav() {
                 <i id="logout" class=" logout fa fa-arrow-left"></i>
               </div>
             </div>
+            
+          </div>
+          </div>
+          </ul>
           </div>
         
-      </div>
-    </>
-  );
-}
+          
+        
+     
+  </>
+  )}
 export default Respons_nav;

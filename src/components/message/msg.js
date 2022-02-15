@@ -8,7 +8,7 @@ function Msg(){
              <div className="msg">
 <h1>Message</h1>
              </div>
-              xnsfgukl
+       
               
               </>
        )

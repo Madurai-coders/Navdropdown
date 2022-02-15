@@ -30,7 +30,7 @@ function App() {
  <Route path='/saved' excat component={Save}></Route> 
  <Route path='/settings' excat component={Setting}></Route> 
 
-
+ 
 
 </Switch>
      </div>

@@ -1,7 +1,9 @@
 import "./respons_nav.css";
 import { Link } from "react-router-dom";
 
+
 function Respons_nav() {
+
   const addclass = () => {
     document.querySelector("#btn").classList.toggle("inactive");
 
@@ -18,18 +20,28 @@ function Respons_nav() {
  
   
   const addfnt = () => {
+    document.querySelector("#sidebar").classList.add("close");
 
-     document.querySelector("#sidebar").classList.toggle("close");
      document.querySelector("#btn").classList.toggle("inactive");
-     document.querySelector("#logout").classList.toggle("change");
+     document.querySelector("#logout").classList.add("change");
 
    
   
 };
 
+const closefnt = () => {
+  document.querySelector("#btn").classList.toggle("inactive");
+  document.querySelector("#logout").classList.toggle("change");
+  document.querySelector("#sidebar").classList.toggle("close");
+
+}
+
 
   return (
     <>
+  
+    
+    
       <div className="sidebar" id="sidebar">
         <div className="logo_cnt">
           <div className="logo">
@@ -39,7 +51,9 @@ function Respons_nav() {
             </span>
           </div>
           <i onClick={addclass} id="btn" className="btn fa fa-bars"></i>
+
         </div>
+
        
 
 
@@ -47,16 +61,16 @@ function Respons_nav() {
 
         <ul className="nav_list">
         
-          <li>
+          <li className="sh">
             <a href="#">
               <i onClick={addfnt} id="bar" class=" search fa fa-search"></i>
               <input type="text" placeholder="Search..."></input>
             </a>
-            <span  id="tooltip" className="tooltips">
+            <span   className="tooltips">
               Search
             </span>
           </li>
-          <div className="scroll">
+          
           <Link to="/user"style={{textDecoration:'none'}}>
             
             <li>
@@ -143,12 +157,12 @@ function Respons_nav() {
                   </div>
                 </div>
                 </div>
-                <i id="logout" class=" logout fa fa-arrow-left"></i>
+                <i onClick={closefnt} id="logout" class=" logout fa fa-arrow-left"></i>
             
             </div>
             
           </div>
-          </div>
+       
           </ul>
           </div>
         

@@ -16,6 +16,8 @@
   background-color: black;
   transition: width 0.3s;
   transition-timing-function: ease;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .sidebar.close {
   width: 240px;
@@ -26,7 +28,23 @@
 .sidebar .logo_cnt {
   position: fixed;
   top: 0;
+  z-index: 1000;
+width:100%;
+left: 0;
+
+background-color: black;
 }
+
+.sidebar.close .logo_cnt{
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+width: 100%;
+left: 0;
+background-color: black;
+transition: 0.3s ease;
+}
+
 .sidebar .logo_cnt .logo {
   display: flex;
   width: 100%;
@@ -34,7 +52,11 @@
   color: #fff;
   align-items: center;
   opacity: 0;
+  position: relative;
+  left: 65px;
+  top: 4px;
 }
+
 .sidebar.close .logo_cnt .logo {
   opacity: 1;
 }
@@ -50,27 +72,30 @@
 }
 
 .sidebar .btn {
-  position: relative;
+  position: absolute;
   color: #fff;
   font-size: 20px;
-  left: 15%;
-  bottom: 55px;
+  margin-left: 40px;
+  bottom: 5px;
   height: 50px;
   width: 50px;
   text-align: center;
   line-height: 50px;
   transform: translateX(-50%);
 }
-.sidebar .inactive {
-  left: 130%;
-  transform: translateX(-50%);
+
+
+.sidebar .link_name{
+opacity: 0;
 }
 .sidebar.close .link_name {
   opacity: 1;
 }
+
 .sidebar ul {
   margin-top: 120px;
 }
+
 
 .sidebar ul li {
   height: 70px;
@@ -121,11 +146,12 @@
   margin-top: 50px;
   color: #fff;
   font-size: 19px;
+
 }
 
 .sidebar .profile_cnt {
   position: relative;
-  top: 220px;
+  top:220px;
   color: #fff;
   left: 0px;
 }
@@ -139,11 +165,7 @@
   border-radius: 12px;
   background-color: rgb(31, 30, 30);
 }
-.sidebar .profile_cnt .profile.profile_1 {
-  padding: 10px 6px;
-  height: 60px;
-  margin-right: 17px;
-}
+
 
 .profile_cnt .profile .profile_details {
   display: flex;
@@ -186,17 +208,19 @@
   transform: translateX(-50%);
   min-width: 50px;
   line-height: 50px;
-  font-size: 20px;
+  font-size: 24px;
+  
 }
 .profile .logout {
   position: relative;
   bottom: 4px;
   position: absolute;
-  left: 80%;
+  left: -25%;
   transform: translateX(-50%);
   min-width: 50px;
   line-height: 50px;
   font-size: 20px;
+  transform: rotate(180deg);
 }
 
 .sidebar .nav_list li {
@@ -234,78 +258,148 @@
   display: none;
 }
 
-.scroll {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  height: 700px;
+::-webkit-scrollbar {
+  display: none;
+}
+body{
+  overflow: hidden;
 }
 
-::-webkit-scrollbar {
-  width: 5px;
-  border-radius: 10px;
-}
-@media only screen and (max-width: 1670px) {
-  .scroll {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 630px;
+@media only screen and (max-width: 1701px) {
+
+  .sidebar .profile_cnt {
+    position: relative;
+    top:220px;
+    color: #fff;
+    left: 0px;
+   
   }
 }
-@media only screen and (max-width: 1556px) {
-  .scroll {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 640px;
+@media only screen and (max-width: 350px) {
+  .profile .logout.change {
+   font-size: 17px;
   }
-}
-@media only screen and (max-width: 1548px) {
-  .scroll {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 600px;
+  .profile .profile_details .profile_name {
+    font-size: 13px;
+    font-weight: 400;
   }
-}
-@media only screen and (max-width: 1492px) {
-  .scroll {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 590px;
-  }
-}
-@media only screen and (max-width: 1472px) {
-  .scroll {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 560px;
-  }
-}
-@media only screen and (max-width: 1427px) {
-  .scroll {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 520px;
-  }
-}
-@media only screen and (max-width: 1344px) {
-  .scroll {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 470px;
-  }
-}
-@media only screen and (max-width: 1252px) {
-  .scroll {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 400px;
-  }
-}
-@media only screen and (max-width: 1242px) {
-  .scroll{
-    display: none;
-  }
-  .sidebar.close .scroll{
-    display: block;
-  }
+  
+  .profile .profile_details .job {
+    font-size: 10px;
+  } 
  
 }
+@media only screen and (max-width: 339px) {
+  
+  .profile .profile_details .profile_name {
+    font-size: 12px;
+    font-weight: 400;
+  }
+  
+  .profile .profile_details .job {
+    font-size: 9px;
+  } 
+} 
+@media only screen and (max-width: 332px) {
+  .profile .profile_details .profile_name {
+    font-size: 11px;
+    font-weight: 300;
+  }
+  
+  .profile .profile_details .job {
+    font-size: 9px;
+  } 
+}
+@media only screen and (max-width: 328px) {
+ .profile .profile_details .profile_name {
+  font-size: 11px;
+  font-weight: 300;
+}
+
+.profile .profile_details .job {
+  font-size: 8px;
+}
+.profile .logout.change {
+  font-size: 18px;
+  
+}
+ 
+}
+@media only screen and (max-width: 319px) {
+  .profile .profile_details .profile_name {
+   margin-left: -5px;
+   font-size: 10px;
+   font-weight: 200;
+ }
+ 
+ .profile .profile_details .job {
+   font-size: 7px;
+   margin-left: -5px;
+ }
+ .profile .logout.change {
+   font-size: 15px;
+ }
+ }
+ @media only screen and (max-width: 314px) {
+ 
+  .profile .profile_details .profile_name {
+   margin-left: -6px;
+   font-size: 9px;
+   font-weight: 200;
+ }
+ 
+ .profile .profile_details .job {
+  margin-left: -6px;
+   font-size: 8px;
+ }
+ .profile .logout.change {
+  top: 2px;
+  left: 100%;
+  position: absolute;
+}
+ }
+ @media only screen and (max-width: 300px) {
+ 
+  .profile .profile_details .profile_name {
+   margin-left: -7px;
+   font-size: 9px;
+   font-weight: 200;
+ }
+ .profile .profile_details .job {
+  margin-left: -7px;
+   font-size: 8px;
+ }
+ 
+ .profile .logout.change {
+  top: 0;
+  left: 100%;
+  position: absolute;
+}
+
+} 
+@media only screen and (max-width: 289px) {
+
+  .profile .profile_details .profile_name {
+   margin-left: -7px;
+   font-size: 9px;
+   font-weight: 200;
+   position: relative;
+   bottom: 3px;
+ }
+ .profile .profile_details .job {
+   margin-left: -7px;
+   font-size: 8px;
+   position: relative;
+   bottom: 3px; 
+   
+ }
+ 
+ .profile .logout.change{
+  top: 20px;
+  left: 88%;
+  position: absolute;
+}
+
+} 
+
+

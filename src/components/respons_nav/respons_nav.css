@@ -29,20 +29,20 @@
   position: fixed;
   top: 0;
   z-index: 1000;
-width:100%;
-left: 0;
+  width: 100%;
+  left: 0;
 
-background-color: black;
+  background-color: black;
 }
 
-.sidebar.close .logo_cnt{
+.sidebar.close .logo_cnt {
   position: fixed;
   top: 0;
   z-index: 1000;
-width: 100%;
-left: 0;
-background-color: black;
-transition: 0.3s ease;
+  width: 100%;
+  left: 0;
+  background-color: black;
+  transition: 0.3s ease;
 }
 
 .sidebar .logo_cnt .logo {
@@ -84,9 +84,8 @@ transition: 0.3s ease;
   transform: translateX(-50%);
 }
 
-
-.sidebar .link_name{
-opacity: 0;
+.sidebar .link_name {
+  opacity: 0;
 }
 .sidebar.close .link_name {
   opacity: 1;
@@ -95,7 +94,6 @@ opacity: 0;
 .sidebar ul {
   margin-top: 120px;
 }
-
 
 .sidebar ul li {
   height: 70px;
@@ -146,14 +144,14 @@ opacity: 0;
   margin-top: 50px;
   color: #fff;
   font-size: 19px;
-
 }
 
 .sidebar .profile_cnt {
   position: relative;
-  top:220px;
+  top: 220px;
   color: #fff;
   left: 0px;
+  margin-bottom: 280px;
 }
 .sidebar .profile_cnt .hide {
   display: none;
@@ -166,7 +164,6 @@ opacity: 0;
   background-color: rgb(31, 30, 30);
 }
 
-
 .profile_cnt .profile .profile_details {
   display: flex;
   align-items: center;
@@ -176,6 +173,7 @@ opacity: 0;
   opacity: 1;
   display: flex;
   align-items: center;
+  margin-bottom: 292px;
 }
 
 .profile .profile_details .pfl {
@@ -209,13 +207,12 @@ opacity: 0;
   min-width: 50px;
   line-height: 50px;
   font-size: 24px;
-  
 }
 .profile .logout {
   position: relative;
   bottom: 4px;
   position: absolute;
-  left: -25%;
+  right: 30%;
   transform: translateX(-50%);
   min-width: 50px;
   line-height: 50px;
@@ -261,145 +258,43 @@ opacity: 0;
 ::-webkit-scrollbar {
   display: none;
 }
-body{
+body {
   overflow: hidden;
 }
 
 @media only screen and (max-width: 1701px) {
-
   .sidebar .profile_cnt {
     position: relative;
-    top:220px;
+    top: 220px;
     color: #fff;
     left: 0px;
-   
   }
 }
-@media only screen and (max-width: 350px) {
-  .profile .logout.change {
-   font-size: 17px;
+@media only screen and (max-width: 1242px) {
+  .sidebar {
+    width: 0px;
+    height: 100vh !important;
+    top: 0;
+    left: 0;
+    padding: 6px 14px;
+    background-color: black;
+    transition: width 0.3s;
+    transition-timing-function: ease;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-left: 0px;
+    padding-right: 0px;
   }
-  .profile .profile_details .profile_name {
-    font-size: 13px;
-    font-weight: 400;
+  .sidebar.close {
+    padding: 6px 14px;
   }
-  
-  .profile .profile_details .job {
-    font-size: 10px;
-  } 
- 
 }
-@media only screen and (max-width: 339px) {
-  
-  .profile .profile_details .profile_name {
-    font-size: 12px;
-    font-weight: 400;
+
+@media only screen and (max-width: 540px) {
+  .sidebar.close {
+    position: absolute;
   }
-  
-  .profile .profile_details .job {
-    font-size: 9px;
-  } 
-} 
-@media only screen and (max-width: 332px) {
-  .profile .profile_details .profile_name {
-    font-size: 11px;
-    font-weight: 300;
+  .sidebar {
+    position: absolute;
   }
-  
-  .profile .profile_details .job {
-    font-size: 9px;
-  } 
 }
-@media only screen and (max-width: 328px) {
- .profile .profile_details .profile_name {
-  font-size: 11px;
-  font-weight: 300;
-}
-
-.profile .profile_details .job {
-  font-size: 8px;
-}
-.profile .logout.change {
-  font-size: 18px;
-  
-}
- 
-}
-@media only screen and (max-width: 319px) {
-  .profile .profile_details .profile_name {
-   margin-left: -5px;
-   font-size: 10px;
-   font-weight: 200;
- }
- 
- .profile .profile_details .job {
-   font-size: 7px;
-   margin-left: -5px;
- }
- .profile .logout.change {
-   font-size: 15px;
- }
- }
- @media only screen and (max-width: 314px) {
- 
-  .profile .profile_details .profile_name {
-   margin-left: -6px;
-   font-size: 9px;
-   font-weight: 200;
- }
- 
- .profile .profile_details .job {
-  margin-left: -6px;
-   font-size: 8px;
- }
- .profile .logout.change {
-  top: 2px;
-  left: 100%;
-  position: absolute;
-}
- }
- @media only screen and (max-width: 300px) {
- 
-  .profile .profile_details .profile_name {
-   margin-left: -7px;
-   font-size: 9px;
-   font-weight: 200;
- }
- .profile .profile_details .job {
-  margin-left: -7px;
-   font-size: 8px;
- }
- 
- .profile .logout.change {
-  top: 0;
-  left: 100%;
-  position: absolute;
-}
-
-} 
-@media only screen and (max-width: 289px) {
-
-  .profile .profile_details .profile_name {
-   margin-left: -7px;
-   font-size: 9px;
-   font-weight: 200;
-   position: relative;
-   bottom: 3px;
- }
- .profile .profile_details .job {
-   margin-left: -7px;
-   font-size: 8px;
-   position: relative;
-   bottom: 3px; 
-   
- }
- 
- .profile .logout.change{
-  top: 20px;
-  left: 88%;
-  position: absolute;
-}
-
-} 
-
-

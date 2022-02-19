@@ -6,11 +6,11 @@ function User(){
               <>
               
              <div className="user">
-<h1>User page</h1>
+<h1>User page ndsjhrwiser;lkd</h1>
            
 
              <div style={{marginTop:"900px"}}>
-                  <h1>priya</h1>  
+                  <h2>priya </h2>  
              </div>
              </div>
               

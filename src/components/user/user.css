@@ -1,6 +1,7 @@
 .user{
        height: 95vh;
        background-color: blue;
-       
+      
      overflow-y: scroll;
 }
+

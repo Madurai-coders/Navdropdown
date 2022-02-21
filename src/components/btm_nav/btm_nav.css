@@ -1,0 +1,24 @@
+.bottom_nav {
+       display: flex;
+       background-color: black;
+       color: blue;
+       height: 8vh;
+       font-size: 30px;
+     }
+     .navlist {
+       display: flex;
+       color: white;
+       text-decoration: none;
+       flex-direction: column;
+       min-width: 50px;
+       font-size: 20px;
+       white-space: nowrap;
+       flex-grow: 1;
+       align-items: center;
+       font-size: 25px;
+     }
+     .nav_txt {
+       text-decoration: none;
+       font-size: 12px;
+     }
+     

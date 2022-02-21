@@ -1,5 +1,12 @@
 .alt{
-       height: 100vh;
-      
+       height: 95vh;
+      overflow-y:scroll ;
        background-color: lightsteelblue;
+}
+@media only screen and (max-width: 430px) {
+       .alt{
+              height: 85vh;
+             overflow-y:scroll ;
+              background-color: lightsteelblue;
+       }
 }

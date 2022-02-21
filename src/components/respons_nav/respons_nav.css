@@ -20,6 +20,7 @@
   overflow-x: hidden;
 }
 .sidebar.close {
+
   width: 240px;
   transition: width 0.3s;
   transition-timing-function: ease;
@@ -231,9 +232,8 @@
 
 /* tooltip */
 .sidebar ul li .tooltips {
-  position: absolute;
-  left: 160px;
   top: 0%;
+ left: 270px;
   border-radius: 6px;
   transform: translate(-50%, -50%);
   height: 35px;
@@ -243,7 +243,7 @@
   transition: 0s;
   opacity: 1;
   text-align: center;
-  display: none;
+ display: none;
 }
 
 .sidebar ul li:hover .tooltips {
@@ -251,9 +251,9 @@
   display: block;
 }
 
-.sidebar.close ul li .tooltips {
+ .sidebar.close ul li .tooltips {
   display: none;
-}
+}  
 
 ::-webkit-scrollbar {
   display: none;
@@ -261,6 +261,7 @@
 body {
   overflow: hidden;
 }
+
 
 @media only screen and (max-width: 1701px) {
   .sidebar .profile_cnt {

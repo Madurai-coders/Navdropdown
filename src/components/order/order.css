@@ -1,6 +1,15 @@
 .order{
 
-       height: 100vh;
-  
+       height: 95vh;
+  overflow-y: scroll;
        background-color: cornflowerblue;
+}
+@media only screen and (max-width: 430px) {
+       .order{
+
+              height: 85vh;
+         overflow-y: scroll;
+              background-color: cornflowerblue;
+       }
+       
 }

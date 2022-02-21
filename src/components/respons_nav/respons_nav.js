@@ -1,7 +1,10 @@
 import "./respons_nav.css";
 import { Link } from "react-router-dom";
 
+
 function Respons_nav() {
+
+
   const addclass = () => {
     document.querySelector("#btn").classList.toggle("inactive");
     document.querySelector("#sidebar").classList.toggle("close");
@@ -141,7 +144,15 @@ function Respons_nav() {
             </div>
           </div>
         </ul>
+
+
+
+
       </div>
+
+
+
+      
     </>
   );
 }

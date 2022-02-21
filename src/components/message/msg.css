@@ -1,4 +1,12 @@
 .msg{  
-       height: 100vh;
+       height: 95vh;
        background-color: darkviolet;
+       overflow-y: scroll;
+}
+@media only screen and (max-width: 430px) {
+       .msg{  
+              height: 85vh;
+              background-color: darkviolet;
+              overflow-y: scroll;
+       }
 }

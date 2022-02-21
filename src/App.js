@@ -1,43 +1,57 @@
 //  import Navbar from './components/navbar/navbar';
-import './App.css';
-import Respons_nav from './components/respons_nav/respons_nav';
- import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import User from './components/user/user';
-import Msg from './components/message/msg';
-import Alts from './components/analytics/alts';
-import Order from './components/order/order';
-import Save from './components/saved/save';
-import Setting from './components/settings/setting';
+import "./App.css";
+import Respons_nav from "./components/respons_nav/respons_nav";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import User from "./components/user/user";
+import Msg from "./components/message/msg";
+import Alts from "./components/analytics/alts";
+import Order from "./components/order/order";
+import Save from "./components/saved/save";
+import Setting from "./components/settings/setting";
+import Btm_nav from "./components/btm_nav/btm_nav";
 
 function App() {
+
   return (
     <>
- <div className='d-flex flex-row'>
-   <BrowserRouter>
-            
-                 
-     <Respons_nav></Respons_nav> 
-            
+      <div className="d-flex flex-row">
+        <BrowserRouter>
+          <Respons_nav></Respons_nav>
 
-                <div className="flex-grow-1 " style={{marginTop:"48px"}} >
-<Switch>
+          <div className="flex-grow-1 " style={{ marginTop: "48px" }}>
+            <Switch>
+              <Route path="/user" excat component={User}></Route>
+              <Route path="/message" excat component={Msg}></Route>
+              <Route path="/analytics" excat component={Alts}></Route>
+              <Route path="/order" excat component={Order}></Route>
+              <Route path="/saved" excat component={Save}></Route>
+              <Route path="/settings" excat component={Setting}></Route>
+            </Switch>
 
- 
- <Route path='/user' excat component={User}></Route> 
- <Route path='/message' excat component={Msg}></Route> 
- <Route path='/analytics' excat component={Alts}></Route> 
- <Route path='/order' excat component={Order}></Route> 
- <Route path='/saved' excat component={Save}></Route> 
- <Route path='/settings' excat component={Setting}></Route> 
-
- 
-
-</Switch>
-     </div>
-    
-     </BrowserRouter>
-     </div>
-    
+            {/* {isTabletOrMobile && (
+              <div className="bottom_nav">
+                <a href="#" className="navlist mt-2">
+                  <i class="home fa fa-home" aria-hidden="true"></i>
+                  <span className="nav_txt">Home</span>
+                </a>
+                <a href="#" className="navlist mt-2">
+                  <i class="cart fa fa-cart-plus" aria-hidden="true"></i>
+                  <span className="nav_txt">Cart</span>
+                </a>
+                <a href="#" className="navlist mt-2">
+                  <i class="act fa fa-user" aria-hidden="true"></i>
+                  <span className="nav_txt">User</span>
+                </a>
+                <a href="#" className="navlist mt-2">
+                  <i class=" community fa fa-users" aria-hidden="true"></i>
+                  <span className="nav_txt">Community</span>
+                </a>
+              </div>
+            )} */}
+            <Btm_nav></Btm_nav>
+          </div>
+        </BrowserRouter>
+      </div>
     </>
   );
 }

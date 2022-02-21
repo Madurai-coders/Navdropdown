@@ -1,6 +1,15 @@
 .save{
 
-       height: 100vh;
-     
+       height: 95vh;
+     overflow-y: scroll;
        background-color: brown;
 }
+
+@media only screen and (max-width: 430px) {
+       .save{
+       
+         height: 85vh;
+         background-color: brown;
+       overflow-y: scroll;
+     }
+     }

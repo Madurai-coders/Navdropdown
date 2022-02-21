@@ -1,5 +1,13 @@
 .setting{
-       height: 100vh;
-      
+       height: 95vh;
+      overflow-y: scroll;
        background-color: aqua;
 }
+@media only screen and (max-width: 430px) {
+       .setting{
+       
+         height: 85vh;
+         background-color: aqua;
+       overflow-y: scroll;
+     }
+     }

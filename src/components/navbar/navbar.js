@@ -59,17 +59,11 @@ function Navbar() {
                 <span className="link_name">Posts</span>
                 </a>
                 <i className="chevron_down_1 fa fa-sort-down"></i>
-             <ul>
-             <li>
-                <a href="#">Web Design</a>
-              </li>
-              <li>
-                <a href="#">Card Design</a>
-              </li>
-              <li>
-                <a href="#">Login Form</a>
-              </li>
-             </ul>
+                <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
            </li>
               </div>
             </div>

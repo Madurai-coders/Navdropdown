@@ -1,12 +1,16 @@
 .bottom_nav {
-       display: flex;
+      
        background-color: black;
        color: blue;
-       height: 8vh;
+    display: flex;
        font-size: 30px;
+       position: fixed;
+       left: 0;
+       bottom: 0;
+       width: 100%;
      }
      .navlist {
-       display: flex;
+      display: flex;
        color: white;
        text-decoration: none;
        flex-direction: column;

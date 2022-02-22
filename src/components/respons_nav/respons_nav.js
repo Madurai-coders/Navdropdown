@@ -1,16 +1,12 @@
 import "./respons_nav.css";
 import { Link } from "react-router-dom";
 
-
 function Respons_nav() {
-
-
   const addclass = () => {
     document.querySelector("#btn").classList.toggle("inactive");
     document.querySelector("#sidebar").classList.toggle("close");
     document.querySelector("#logout").classList.toggle("change");
   };
-
 
   const addfnt = () => {
     document.querySelector("#sidebar").classList.add("close");
@@ -18,13 +14,21 @@ function Respons_nav() {
     document.querySelector("#logout").classList.add("change");
   };
 
-
   const closefnt = () => {
     document.querySelector("#btn").classList.toggle("inactive");
     document.querySelector("#logout").classList.toggle("change");
     document.querySelector("#sidebar").classList.toggle("close");
   };
 
+  const dropdown = () => {
+    document.querySelector("#submenu").classList.toggle("menuopen");
+    document.querySelector("#arrow").classList.toggle("down");
+  };
+
+  const dropdown_1 = () => {
+    document.querySelector("#submenu_1").classList.toggle("menuopen_1");
+    document.querySelector("#arrow_1").classList.toggle("down_1");
+  };
   return (
     <>
       <div className="sidebar" id="sidebar">
@@ -47,18 +51,26 @@ function Respons_nav() {
             <span className="tooltips">Search</span>
           </li>
           <Link to="/user" style={{ textDecoration: "none" }}>
-            <li>
+            <li className="dropdown">
               <a href="#">
                 <i class="fa fa-user"></i>
                 <span className="link_name" id="link_name_close">
                   User
                 </span>
+                <i
+                  id="arrow"
+                  onClick={dropdown}
+                  className="chevron_down fa fa-sort-down"
+                ></i>
               </a>
-              <span  className="tooltips">
-                User
-              </span>
             </li>
+            <div className="menulist" id="submenu">
+              <h6 className="sub">My Account</h6>
+              <h6 className="sub">My Rewards</h6>
+              <h6 className="sub"> My Wish List</h6>
+            </div>
           </Link>
+
           <Link to="/message" style={{ textDecoration: "none" }}>
             <li>
               <a href="#">
@@ -67,9 +79,7 @@ function Respons_nav() {
                   Message
                 </span>
               </a>
-              <span  className="tooltips">
-                Message
-              </span>
+              <span className="tooltips">Message</span>
             </li>
           </Link>
           <Link to="/analytics" style={{ textDecoration: "none" }}>
@@ -78,9 +88,7 @@ function Respons_nav() {
                 <i class="fa fa-calendar"></i>
                 <span className="link_name">Analytics</span>
               </a>
-              <span  className="tooltips">
-                Analytics
-              </span>
+              <span className="tooltips">Analytics</span>
             </li>
           </Link>
           <Link to="/order" style={{ textDecoration: "none" }}>
@@ -88,11 +96,18 @@ function Respons_nav() {
               <a href="#">
                 <i class="fa fa-shopping-cart"></i>
                 <span className="link_name">Order</span>
+                <i
+                  id="arrow_1"
+                  onClick={dropdown_1}
+                  className="chevron_down fa fa-sort-down"
+                ></i>
               </a>
-              <span className="tooltips">
-                Order
-              </span>
             </li>
+            <div className="menulist_1" id="submenu_1">
+              <h6 className="sub_1">My Order</h6>
+              <h6 className="sub_1">Cart List</h6>
+              <h6 className="sub_1">Favorite</h6>
+            </div>
           </Link>
           <Link to="/saved" style={{ textDecoration: "none" }}>
             <li>
@@ -100,9 +115,7 @@ function Respons_nav() {
                 <i class="fa fa-heart"></i>
                 <span className="link_name">Saved</span>
               </a>
-              <span  className="tooltips">
-                Saved
-              </span>
+              <span className="tooltips">Saved</span>
             </li>
           </Link>
 
@@ -112,9 +125,7 @@ function Respons_nav() {
                 <i class="fa fa-cog"></i>
                 <span className="link_name">Settings</span>
               </a>
-              <span  className="tooltips">
-                Settings
-              </span>
+              <span className="tooltips">Settings</span>
             </li>
           </Link>
 
@@ -144,15 +155,7 @@ function Respons_nav() {
             </div>
           </div>
         </ul>
-
-
-
-
       </div>
-
-
-
-      
     </>
   );
 }

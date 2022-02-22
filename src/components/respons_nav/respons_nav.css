@@ -20,7 +20,6 @@
   overflow-x: hidden;
 }
 .sidebar.close {
-
   width: 240px;
   transition: width 0.3s;
   transition-timing-function: ease;
@@ -233,7 +232,7 @@
 /* tooltip */
 .sidebar ul li .tooltips {
   top: 0%;
- left: 270px;
+  left: 270px;
   border-radius: 6px;
   transform: translate(-50%, -50%);
   height: 35px;
@@ -243,7 +242,7 @@
   transition: 0s;
   opacity: 1;
   text-align: center;
- display: none;
+  display: none;
 }
 
 .sidebar ul li:hover .tooltips {
@@ -251,9 +250,9 @@
   display: block;
 }
 
- .sidebar.close ul li .tooltips {
+.sidebar.close ul li .tooltips {
   display: none;
-}  
+}
 
 ::-webkit-scrollbar {
   display: none;
@@ -261,7 +260,73 @@
 body {
   overflow: hidden;
 }
+.sidebar .chevron_down {
+  display: none;
+}
+.sidebar.close .chevron_down {
+  left: 65px;
+  transform: translateY(-50%) rotate(-180deg);
+  position: relative;
+  top: 31px;
+  font-size: 20px;
+  display: block;
+}
+.sidebar.close .down {
+  transform: translateY(-50%);
+  position: relative;
+  top: 25px;
+}
 
+.menulist {
+  display: none;
+  background-color: #262626;
+  position: relative;
+  bottom: 10px;
+}
+
+.menuopen {
+  display: block;
+  width: 214px;
+  height: 130px;
+}
+.sub {
+  position: relative;
+  top: 15px;
+  left: 40px;
+  line-height: 30px;
+  color: #818181;
+}
+.sub:hover {
+  color: #f1f1f1;
+}
+.menulist_1 {
+  display: none;
+  background-color: #262626;
+  position: relative;
+  bottom: 10px;
+}
+
+.menuopen_1 {
+  display: block;
+  width: 214px;
+  height: 130px;
+}
+.sub_1 {
+  position: relative;
+  top: 15px;
+  left: 40px;
+  line-height: 30px;
+  color: #818181;
+}
+.sub_1:hover {
+  color: #f1f1f1;
+}
+
+.sidebar.close .down_1 {
+  transform: translateY(-50%);
+  position: relative;
+  top: 25px;
+}
 
 @media only screen and (max-width: 1701px) {
   .sidebar .profile_cnt {

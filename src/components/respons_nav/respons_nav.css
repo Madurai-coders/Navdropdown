@@ -294,6 +294,7 @@ body {
 @media only screen and (max-width: 540px) {
   .sidebar.close {
     position: absolute;
+    z-index: 1000;
   }
   .sidebar {
     position: absolute;

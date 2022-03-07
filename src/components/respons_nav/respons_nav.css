@@ -6,6 +6,32 @@
   margin: 0;
   padding: 0;
 }
+.navbar{
+  background-color: black;
+   width: 100%;
+  } 
+  .bg-light{
+    background-color: black!important;
+  }
+  .container-fluid{
+    color: #fff;
+  }
+  .lg{
+    font-size: 30px;
+    position: fixed;
+    left: 70px;
+    top: 6px;
+  }
+  .logo_name{
+    position: fixed;
+    left: 110px;  
+  top: 6px;
+  }
+  .btn{
+    padding: 3px 15px;
+    font-size: 16px;
+  }
+  
 
 .sidebar {
   width: 78px;
@@ -43,9 +69,10 @@
   left: 0;
   background-color: black;
   transition: 0.3s ease;
+
 }
 
-.sidebar .logo_cnt .logo {
+.sidebar .logo {
   display: flex;
   width: 100%;
   height: 50px;
@@ -55,6 +82,7 @@
   position: relative;
   left: 65px;
   top: 4px;
+ 
 }
 
 .sidebar.close .logo_cnt .logo {
@@ -64,14 +92,17 @@
 .logo_cnt .logo i {
   font-size: 32px;
   margin-right: 10px;
+ 
 }
 
 .logo_cnt .logo .logo_name {
   font-size: 20px;
   font-weight: 400;
+ 
 }
 
-.sidebar .btn {
+
+.sidebar .bar {
   position: absolute;
   color: #fff;
   font-size: 20px;
@@ -80,8 +111,13 @@
   height: 50px;
   width: 50px;
   text-align: center;
-  line-height: 50px;
+  line-height: 60px;
   transform: translateX(-50%);
+}
+
+.sidebar .logo{
+  display: flex;
+ justify-content:start;
 }
 
 .sidebar .link_name {
@@ -264,17 +300,23 @@ body {
   display: none;
 }
 .sidebar.close .chevron_down {
-  left: 65px;
-  transform: translateY(-50%) rotate(-180deg);
+  left: 75px;
+  transform: translateY(-50%) ;
   position: relative;
-  top: 31px;
+  top: 24px;
   font-size: 20px;
   display: block;
 }
-.sidebar.close .down {
-  transform: translateY(-50%);
+.sidebar.close .chevron_down_1{
+  display: none;
+}
+.sidebar.close .chevron_down_1{
+  left: 65px;
+  transform: translateY(-50%) ;
   position: relative;
-  top: 25px;
+  top: 24px;
+  font-size: 20px;
+  display: block;
 }
 
 .menulist {
@@ -322,11 +364,7 @@ body {
   color: #f1f1f1;
 }
 
-.sidebar.close .down_1 {
-  transform: translateY(-50%);
-  position: relative;
-  top: 25px;
-}
+
 
 @media only screen and (max-width: 1701px) {
   .sidebar .profile_cnt {

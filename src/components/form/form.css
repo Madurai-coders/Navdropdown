@@ -1,0 +1,132 @@
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 85%; /* Full height (cover the whole page) */
+  top: 60px;
+  left: 1%;
+  right: 0px;
+  bottom: 0;
+  /* Black background with opacity */
+  /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you'Wre using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+.card {
+  height: 380px;
+  width: 300px;
+}
+
+.close {
+  position: relative;
+  left: 120px;
+  top: 10px;
+  color: rgb(134, 132, 132);
+  font-size: 25px;
+}
+.title1 {
+  margin-top: 10px;
+  color: rgb(134, 132, 132);
+}
+
+.word {
+  position: relative;
+  right: 59px;
+  color: black;
+  bottom: 60px;
+}
+.email {
+  position: relative;
+  right: 75px;
+  color: black;
+  bottom: 60px;
+}
+
+.login {
+  position: relative;
+  top: 105px;
+  right: 10px;
+  margin-left: 95px;
+  margin-right: 95px;
+  background-color: rgb(255, 113, 30);
+  color: white;
+}
+
+.password {
+  position: relative;
+top: 30px;
+  width: 220px;
+  left: 20px;
+}
+.username {
+  width: 220px;
+  position: relative;
+  left: 20px;
+  top: 20px;
+}
+.u_req {
+  color: red;
+  font-size: 12px;
+  position:absolute;
+   left: 65px;
+  top: 150px; 
+  display: none;
+}
+.req_warning {
+  display: block;
+}
+.u_longer{
+  color: red;
+  font-size: 12px;
+  position: absolute;
+top: 150px;
+left: 65px;
+  display: none;
+}
+.longer_warning {
+  display: block;
+}
+.pass_req{
+  color: red;
+  font-size: 14px;
+  position: relative;
+  right: 10px;
+  display: none;
+}
+.req_warning {
+  display: block;
+}
+.pass_long{
+       color: red;
+       font-size: 12px;
+       position:absolute;
+    top: 240px;
+    left: 65px;
+       display: none;  
+}
+.long_warning{
+       display: block;
+}
+.saved{
+       color:red;
+       font-size: 15px;
+       position: absolute;
+       top: 350px;
+       left: 75px;
+       display: none;
+}
+.cancel{
+       display: block;
+}
+.success{
+       color:darkgreen;
+       position: absolute;
+       top: 350px;
+       left: 75px;
+       display: none; 
+}
+.successful{
+       display: block;
+}
+.table{
+  padding: 0;
+}

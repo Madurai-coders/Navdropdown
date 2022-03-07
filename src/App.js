@@ -9,7 +9,7 @@ import Order from "./components/order/order";
 import Save from "./components/saved/save";
 import Setting from "./components/settings/setting";
 import Btm_nav from "./components/btm_nav/btm_nav";
-
+ import Form from './components/form/form';
 function App() {
 
   return (
@@ -26,6 +26,8 @@ function App() {
               <Route path="/order" excat component={Order}></Route>
               <Route path="/saved" excat component={Save}></Route>
               <Route path="/settings" excat component={Setting}></Route>
+               <Route path='/form' excat component={Form}></Route>  
+
             </Switch>
 
             

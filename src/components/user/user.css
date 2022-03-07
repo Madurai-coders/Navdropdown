@@ -8,7 +8,7 @@
 @media only screen and (max-width: 430px) {
   .user{
   
-    height: 86vh;
+    height: 89vh;
     background-color: blue;
   overflow-y: scroll;
 }

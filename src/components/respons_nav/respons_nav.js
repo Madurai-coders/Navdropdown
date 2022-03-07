@@ -29,17 +29,30 @@ function Respons_nav() {
     document.querySelector("#submenu_1").classList.toggle("menuopen_1");
     document.querySelector("#arrow_1").classList.toggle("down_1");
   };
+  // const [Login, setLogin] = useState(false);
   return (
     <>
       <div className="sidebar" id="sidebar">
         <div className="logo_cnt">
-          <div className="logo">
-            <i class="lg fa fa-code" id="logo"></i>
-            <span className="logo_name" id="logo_1">
-              CodingLab
-            </span>
-          </div>
-          <i onClick={addclass} id="btn" className="btn fa fa-bars"></i>
+          <nav class="navbar navbar-dark bg-black">
+            <div class="container-fluid">
+              <a class="navbar-brand">
+                <i class="lg fa fa-code" id="logo"></i>
+                <span className="logo_name" id="logo_1">
+                  CodingLab
+                </span>
+              </a>
+              <form class="d-flex">
+                <Link to="/form" style={{ textDecoration: "none" }}>
+                  <button class="btn btn-primary">Login</button>{" "}
+                </Link>
+                {/* <button onClick={() => (setLogin(true))} class="btn btn-primary" type="submit">
+                  Login
+                </button> */}
+              </form>
+            </div>
+          </nav>
+          <i onClick={addclass} id="btn" className="bar fa fa-bars"></i>
         </div>
 
         <ul className="nav_list">
@@ -59,7 +72,7 @@ function Respons_nav() {
                 </span>
                 <i
                   id="arrow"
-                  onClick={dropdown}
+                  onMouseOver={dropdown}
                   className="chevron_down fa fa-sort-down"
                 ></i>
               </a>
@@ -98,8 +111,8 @@ function Respons_nav() {
                 <span className="link_name">Order</span>
                 <i
                   id="arrow_1"
-                  onClick={dropdown_1}
-                  className="chevron_down fa fa-sort-down"
+                  onMouseOver={dropdown_1}
+                  className="chevron_down_1 fa fa-sort-down"
                 ></i>
               </a>
             </li>
@@ -156,6 +169,11 @@ function Respons_nav() {
           </div>
         </ul>
       </div>
+      {/* {Login &&(
+  <>
+<Form></Form>
+  </>
+)} */}
     </>
   );
 }

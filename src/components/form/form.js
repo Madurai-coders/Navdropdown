@@ -29,7 +29,7 @@ function Form() {
   }
 
   function login() {
-    if (formvalue.username.length > 3 || formvalue.password.length > 5) {
+    if (formvalue.username.length > 3 & formvalue.password.length > 5) {
 
       let array = inputdata;
       array.push({ ...formvalue });
@@ -54,7 +54,7 @@ function Form() {
             <div className="col-auto">
               <div className="card mt-5 text-center bg-white  shadow">
                 <div onClick={() => setclose(false)}>
-                  <i class=" close fa fa-times" aria-hidden="true"></i>
+                  <i class=" close_1 fa fa-times" aria-hidden="true"></i>
                 </div>
 
                 <h2 className="title1">Login</h2>

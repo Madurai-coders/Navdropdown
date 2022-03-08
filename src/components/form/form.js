@@ -57,12 +57,13 @@ function Form() {
 
   function login() {
     if ((formvalue.username.length > 3) & (formvalue.password.length > 10)) {
+      document.querySelector("#success").classList.add("successful");
+
       let array = inputdata;
       array.push({ ...formvalue });
 
       console.log(array);
       setinputdata([...array]);
-      document.querySelector("#success").classList.add("successful");
 
       setformvalue({
         username: "",
@@ -72,12 +73,10 @@ function Form() {
       document.querySelector("#not_saved").classList.add("cancel");
     }
 
-    if ((formvalue.username.length > 3) & (formvalue.password.length > 10)) {
-      document.querySelector("#not_saved").classList.remove("cancel");
-    } else if (
-      (formvalue.username.length < 1) &
-      (formvalue.password.length < 1)
-    ) {
+     if ((formvalue.username.length > 3) & (formvalue.password.length > 10)) {
+       document.querySelector("#not_saved").classList.remove("cancel");
+     }
+    else  {
       document.querySelector("#success").classList.remove("successful");
     }
   }
@@ -177,12 +176,12 @@ function Form() {
 
       <div className="footer row justify-content-center mt-5">
         <div className="col-lg-6 col-md-9 col-sm-6">
-       <ul>
-         <li className="lists">Condition of Use</li>
-         <li className="lists">Privacy Notice</li>
-         <li className="lists">Help</li>
-       </ul>
-       </div>
+          <ul>
+            <li className="lists">Condition of Use</li>
+            <li className="lists">Privacy Notice</li>
+            <li className="lists">Help</li>
+          </ul>
+        </div>
       </div>
     </>
   );

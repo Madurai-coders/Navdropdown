@@ -281,10 +281,7 @@
   display: none;
 }
 
-.sidebar ul li:hover .tooltips {
-  top: 50%;
-  display: block;
-}
+
 
 .sidebar.close ul li .tooltips {
   display: none;

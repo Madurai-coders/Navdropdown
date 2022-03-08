@@ -1,19 +1,7 @@
-.overlay {
-  position: fixed; /* Sit on top of the page content */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 85%; /* Full height (cover the whole page) */
-  top: 60px;
-  left: 1%;
-  right: 0px;
-  bottom: 0;
-  /* Black background with opacity */
-  /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you'Wre using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
-}
+
 .card {
   height: 380px;
-  width: 300px;
+  width: 500px;
 }
 
 .close_1 {
@@ -24,26 +12,14 @@
   font-size: 25px;
 }
 .title1 {
-  margin-top: 10px;
-  color: rgb(134, 132, 132);
-}
-
-.word {
-  position: relative;
-  right: 59px;
-  color: black;
-  bottom: 60px;
-}
-.email {
-  position: relative;
-  right: 75px;
-  color: black;
-  bottom: 60px;
+  margin-left: 50px;
+  margin-top: 40px;
+  font-weight: 200;
 }
 
 .login {
   position: relative;
-  top: 105px;
+  top: 95px;
   right: 10px;
   margin-left: 95px;
   margin-right: 95px;
@@ -53,80 +29,102 @@
 
 .password {
   position: relative;
-top: 30px;
-  width: 220px;
-  left: 20px;
+  top: 30px;
+  width: 400px;
+  left: 55px;
 }
 .username {
-  width: 220px;
+  width: 400px;
   position: relative;
-  left: 20px;
+  left: 55px;
   top: 20px;
 }
 .u_req {
   color: red;
-  font-size: 12px;
-  position:absolute;
-   left: 65px;
-  top: 150px; 
+  font-size: 14px;
+  position: absolute;
+  left: 56px;
+  top: 160px;
   display: none;
 }
 .req_warning {
   display: block;
 }
-.u_longer{
+.u_longer {
   color: red;
-  font-size: 12px;
+  font-size: 14px;
   position: absolute;
-top: 150px;
-left: 65px;
+  top: 160px;
+  left: 56px;
   display: none;
 }
 .longer_warning {
   display: block;
 }
-.pass_req{
+.pass_req {
   color: red;
   font-size: 14px;
-  position: relative;
-  right: 10px;
+  position: absolute;
+  top: 243px;
+  left: 56px;
   display: none;
 }
 .req_warning {
   display: block;
 }
-.pass_long{
-       color: red;
-       font-size: 12px;
-       position:absolute;
-    top: 240px;
-    left: 65px;
-       display: none;  
+.pass_long {
+  color: red;
+  font-size: 14px;
+  position: absolute;
+  top: 243px;
+  left: 56px;
+  display: none;
 }
-.long_warning{
-       display: block;
+.long_warning {
+  display: block;
 }
-.saved{
-       color:red;
-       font-size: 15px;
-       position: absolute;
-       top: 350px;
-       left: 75px;
-       display: none;
+
+
+.saved {
+  color: red;
+  font-size: 25px;
+  position: absolute;
+  top: 340px;
+  left: 140px;
+  display: none;
 }
-.cancel{
-       display: block;
+.cancel {
+  display: block;
 }
+
 .success{
-       color:darkgreen;
-       position: absolute;
-       top: 350px;
-       left: 75px;
-       display: none; 
+  color:rgb(4,170,109);
+  position: absolute;
+  top: 340px;
+  left: 90px;
+ font-size: 25px;
+display: none;
 }
-.successful{
-       display: block;
+.successful {
+  display: block;
 }
-.table{
+
+.table {
   padding: 0;
 }
+.footer{
+  background-color:rgb(255, 250, 250);
+height: 90vh;
+padding: 0;
+margin: 0;
+}
+
+.lists{
+  display: inline-block;
+  padding: 20px 30px;
+}
+.lists:hover{
+  color: rgb(255,113,30);
+  text-decoration:underline;
+}
+

@@ -6,6 +6,10 @@ function Respons_nav() {
     document.querySelector("#btn").classList.toggle("inactive");
     document.querySelector("#sidebar").classList.toggle("close");
     document.querySelector("#logout").classList.toggle("change");
+    document.querySelector("#submenu").classList.remove("menuopen");
+    document.querySelector("#arrow").classList.remove("down"); 
+    document.querySelector("#submenu_1").classList.remove("menuopen_1");
+    document.querySelector("#arrow_1").classList.remove("down_1"); 
   };
 
   const addfnt = () => {
@@ -23,13 +27,17 @@ function Respons_nav() {
   const dropdown = () => {
     document.querySelector("#submenu").classList.toggle("menuopen");
     document.querySelector("#arrow").classList.toggle("down");
+    document.querySelector("#submenu_1").classList.remove("menuopen_1");
+    document.querySelector("#arrow_1").classList.remove("down_1");  
   };
 
   const dropdown_1 = () => {
     document.querySelector("#submenu_1").classList.toggle("menuopen_1");
     document.querySelector("#arrow_1").classList.toggle("down_1");
+    document.querySelector("#submenu").classList.remove("menuopen");
+    document.querySelector("#arrow").classList.remove("down");
   };
-  // const [Login, setLogin] = useState(false);
+
   return (
     <>
       <div className="sidebar" id="sidebar">
@@ -43,12 +51,10 @@ function Respons_nav() {
                 </span>
               </a>
               <form class="d-flex">
-                <Link to="/form" style={{ textDecoration: "none" }}>
+                 <Link to="/form" style={{ textDecoration: "none" }}>
                   <button class="btn btn-primary">Login</button>{" "}
-                </Link>
-                {/* <button onClick={() => (setLogin(true))} class="btn btn-primary" type="submit">
-                  Login
-                </button> */}
+                </Link> 
+              
               </form>
             </div>
           </nav>
@@ -72,7 +78,7 @@ function Respons_nav() {
                 </span>
                 <i
                   id="arrow"
-                  onMouseOver={dropdown}
+                  onClick={dropdown}
                   className="chevron_down fa fa-sort-down"
                 ></i>
               </a>
@@ -111,7 +117,7 @@ function Respons_nav() {
                 <span className="link_name">Order</span>
                 <i
                   id="arrow_1"
-                  onMouseOver={dropdown_1}
+                  onClick={dropdown_1}
                   className="chevron_down_1 fa fa-sort-down"
                 ></i>
               </a>
@@ -169,11 +175,7 @@ function Respons_nav() {
           </div>
         </ul>
       </div>
-      {/* {Login &&(
-  <>
-<Form></Form>
-  </>
-)} */}
+
     </>
   );
 }

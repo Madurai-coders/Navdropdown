@@ -35,7 +35,7 @@
 
 .sidebar {
   width: 78px;
-  height: 100vh !important;
+ 
   top: 0;
   left: 0;
   padding: 6px 14px;
@@ -44,11 +44,13 @@
   transition-timing-function: ease;
   overflow-y: scroll;
   overflow-x: hidden;
+ 
 }
-.sidebar.close {
+.sidebar.close_1 {
   width: 240px;
   transition: width 0.3s;
   transition-timing-function: ease;
+  overflow-y: scroll;
 }
 
 .sidebar .logo_cnt {
@@ -61,7 +63,7 @@
   background-color: black;
 }
 
-.sidebar.close .logo_cnt {
+.sidebar.close_1 .logo_cnt {
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -85,7 +87,7 @@
  
 }
 
-.sidebar.close .logo_cnt .logo {
+.sidebar.close_1 .logo_cnt .logo {
   opacity: 1;
 }
 
@@ -123,7 +125,7 @@
 .sidebar .link_name {
   opacity: 0;
 }
-.sidebar.close .link_name {
+.sidebar.close_1 .link_name {
   opacity: 1;
 }
 
@@ -205,7 +207,7 @@
   align-items: center;
   opacity: 0;
 }
-.sidebar.close .profile .profile_details {
+.sidebar.close_1 .profile .profile_details {
   opacity: 1;
   display: flex;
   align-items: center;
@@ -265,27 +267,11 @@
   padding: 0;
 }
 
-/* tooltip */
-.sidebar ul li .tooltips {
-  top: 0%;
-  left: 270px;
-  border-radius: 6px;
-  transform: translate(-50%, -50%);
-  height: 35px;
-  width: 122px;
-  line-height: 35px;
-  background-color: #fff;
-  transition: 0s;
-  opacity: 1;
-  text-align: center;
-  display: none;
-}
+
+  
 
 
 
-.sidebar.close ul li .tooltips {
-  display: none;
-}
 
 ::-webkit-scrollbar {
   display: none;
@@ -296,7 +282,7 @@ body {
 .sidebar .chevron_down {
   display: none;
 }
-.sidebar.close .chevron_down {
+.sidebar.close_1 .chevron_down {
   left: 75px;
   transform: translateY(-50%) ;
   position: relative;
@@ -304,10 +290,10 @@ body {
   font-size: 20px;
   display: block;
 }
-.sidebar.close .chevron_down_1{
+.sidebar.close_1 .chevron_down_1{
   display: none;
 }
-.sidebar.close .chevron_down_1{
+.sidebar.close_1 .chevron_down_1{
   left: 65px;
   transform: translateY(-50%) ;
   position: relative;
@@ -386,13 +372,13 @@ body {
     padding-left: 0px;
     padding-right: 0px;
   }
-  .sidebar.close {
+  .sidebar.close_1 {
     padding: 6px 14px;
   }
 }
 
 @media only screen and (max-width: 540px) {
-  .sidebar.close {
+  .sidebar.close_1 {
     position: absolute;
     z-index: 1000;
   }

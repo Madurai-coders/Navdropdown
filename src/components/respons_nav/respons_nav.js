@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Respons_nav() {
   const addclass = () => {
     document.querySelector("#btn").classList.toggle("inactive");
-    document.querySelector("#sidebar").classList.toggle("close");
+    document.querySelector("#sidebar").classList.toggle("close_1");
     document.querySelector("#logout").classList.toggle("change");
     document.querySelector("#submenu").classList.remove("menuopen");
     document.querySelector("#arrow").classList.remove("down"); 
@@ -13,7 +13,7 @@ function Respons_nav() {
   };
 
   const addfnt = () => {
-    document.querySelector("#sidebar").classList.add("close");
+    document.querySelector("#sidebar").classList.add("close_1");
     document.querySelector("#btn").classList.toggle("inactive");
     document.querySelector("#logout").classList.add("change");
   };
@@ -21,7 +21,7 @@ function Respons_nav() {
   const closefnt = () => {
     document.querySelector("#btn").classList.toggle("inactive");
     document.querySelector("#logout").classList.toggle("change");
-    document.querySelector("#sidebar").classList.toggle("close");
+    document.querySelector("#sidebar").classList.toggle("close_1");
   };
 
   const dropdown = () => {
@@ -40,6 +40,7 @@ function Respons_nav() {
 
   return (
     <>
+    <div className="d-flex">
       <div className="sidebar" id="sidebar">
         <div className="logo_cnt">
           <nav class="navbar navbar-dark bg-black">
@@ -51,8 +52,8 @@ function Respons_nav() {
                 </span>
               </a>
               <form class="d-flex">
-                 <Link to="/form" style={{ textDecoration: "none" }}>
-                  <button class="btn btn-primary">Login</button>{" "}
+                 <Link to="/validate" style={{ textDecoration: "none" }}>
+                  <button class="btn btn-primary">Sign In</button>{" "}
                 </Link> 
               
               </form>
@@ -67,7 +68,7 @@ function Respons_nav() {
               <i onClick={addfnt} id="bar" class=" search fa fa-search"></i>
               <input type="text" placeholder="Search..."></input>
             </a>
-            <span className="tooltips">Search</span>
+            
           </li>
           <Link to="/user" style={{ textDecoration: "none" }}>
             <li className="dropdown">
@@ -98,7 +99,7 @@ function Respons_nav() {
                   Message
                 </span>
               </a>
-              <span className="tooltips">Message</span>
+              
             </li>
           </Link>
           <Link to="/analytics" style={{ textDecoration: "none" }}>
@@ -107,7 +108,7 @@ function Respons_nav() {
                 <i class="fa fa-calendar"></i>
                 <span className="link_name">Analytics</span>
               </a>
-              <span className="tooltips">Analytics</span>
+             
             </li>
           </Link>
           <Link to="/order" style={{ textDecoration: "none" }}>
@@ -134,7 +135,7 @@ function Respons_nav() {
                 <i class="fa fa-heart"></i>
                 <span className="link_name">Saved</span>
               </a>
-              <span className="tooltips">Saved</span>
+         
             </li>
           </Link>
 
@@ -144,7 +145,7 @@ function Respons_nav() {
                 <i class="fa fa-cog"></i>
                 <span className="link_name">Settings</span>
               </a>
-              <span className="tooltips">Settings</span>
+            
             </li>
           </Link>
 
@@ -175,7 +176,7 @@ function Respons_nav() {
           </div>
         </ul>
       </div>
-
+    </div>
     </>
   );
 }

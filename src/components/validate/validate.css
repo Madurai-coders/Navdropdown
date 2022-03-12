@@ -1,0 +1,265 @@
+.tit_B {
+  font-size: 15px;
+  color: white;
+  margin-top: 9px;
+}
+.form {
+  height: 20%;
+  width: 100%;
+  margin-left: 20px;
+  margin-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(241, 240, 240);
+}
+.validate {
+  height: 100vh;
+  overflow: hidden;
+}
+.name {
+  position: relative;
+  left: 20px;
+}
+
+.name_input {
+  width: 95%;
+  position: relative;
+  left: 20px;
+  border: 1px solid black;
+}
+.nameinput_warning{
+  border-color: red;
+}
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.name_req {
+  position: absolute;
+  bottom: -25px;
+  left: 35px;
+  color: red;
+  display: none;
+}
+.namereq_warning {
+  display: block;
+  position: absolute;
+  bottom: -25px;
+  left: 35px;
+  color: red;
+}
+.name_long{
+  position: absolute;
+  left: 35px;
+  bottom: -47px;
+  color: red;
+  display: none;
+}
+.namelong_warning{
+  display: block;
+  position: absolute;
+  left: 35px;
+  bottom: -47px;
+  color: red;
+}
+.email_txt{
+  position: relative;
+  left: 10px; 
+}
+.email_input{
+  width: 95%;
+  position: relative;
+  left: 10px;
+  border: 1px solid black;
+}
+.emailinput_warning{
+  border-color: red;
+}.email_req{
+  position: absolute;
+  left: 26px;
+  color: red;
+  bottom: -25px;
+  display: none;
+}
+.emailreq_warning{
+  display: block;
+}
+.email_invalid{
+  position: absolute;
+  left: 26px;
+  color: red;
+  bottom: -25px;
+  display: none;
+}
+.email_warning{
+  position: absolute;
+  left: 26px;
+  color: red;
+  bottom: -25px;
+  display: block;
+}
+.phoneno_input{
+  width: 95%;
+  position: relative;
+  border: 1px solid black;
+}
+.no_req{
+  color: red;
+  position: absolute;
+  bottom: 0px;
+  left: 15px;
+  display: none;
+}
+.noreq_warning{
+  color: red;
+  position: absolute;
+  bottom: -25px;
+  left: 15px;
+  display: block; 
+}
+.no_limit{
+  color: red;
+  position: absolute;
+left: 15px;
+display: none;
+}
+.nolimit_warning{
+  color: red;
+  position: absolute;
+left: 15px;
+display: block;
+}
+.no_only{
+  color: red;
+  position: absolute;
+left: 15px;
+display: none; 
+}
+.age_input {
+  width: 95%;
+  border: 1px solid black;
+}
+.age_req{
+  color: red;
+  position: absolute;
+  bottom: -25px;
+  left: 17px;
+  display: none;
+}
+.agereq_warning{
+ color: red;
+  position: absolute;
+  bottom: -25px;
+  left: 17px;
+  display: block;
+}
+.age_limit{
+  color: red;
+  position: absolute;
+  bottom: -45px;
+  left: 17px;
+  font-size: 15px;
+  display: none;
+}
+.agelimit_warning{
+  color: red;
+  position: absolute;
+  bottom: -45px;
+  left: 17px;
+  font-size: 15px;
+  display: block;  
+}
+.dob_input{
+  width: 95%;
+  position: relative;
+  border: 1px solid black;
+}
+.dob_req{
+  color: red;
+  position: absolute;
+  bottom: -25px;
+  left: 17px;
+  font-size: 15px;
+ display: none;
+}
+.dobreq_warning{
+  color: red;
+  position: absolute;
+  bottom: -25px;
+  left: 17px;
+  font-size: 15px;
+  display: block; 
+}
+.dob_limit{
+  color: red;
+  position: absolute;
+  bottom: -25px;
+  left: 17px;
+  font-size: 15px;
+  display: none;
+}
+.doblimit_warning{
+
+  color: red;
+  position: absolute;
+  bottom: -25px;
+  left: 17px;
+  font-size: 15px;
+  display: block;
+}
+
+.address_input {
+  width: 90%;
+  border: 1px solid black;
+}
+
+.address_req{
+  color: red;
+  position: absolute;
+  bottom: -25px;
+  left: 17px;
+  font-size: 15px;
+  display: none;
+}
+.addressreq_warning{
+  color: red;
+  position: absolute;
+  bottom: -25px;
+  left: 17px;
+  font-size: 15px;
+  display: block; 
+}
+
+
+.submit {
+  position: absolute;
+  left: 25px;
+  top: 35px;
+}
+.tbl {
+  padding: 0;
+  margin-left: 20px;
+}
+
+.heading {
+  background-color: #28a8e0;
+  color: white;
+  height: 35px;
+  font-size: 15px;
+}
+
+.tbdy {
+  display: block;
+  max-height: 395px;
+  overflow-y: auto;
+}
+thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+thead {
+  width: calc(100% - 1em);
+}

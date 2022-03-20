@@ -1,5 +1,6 @@
 import "./validate.css";
 import React, { useState } from "react";
+
 function Validate() {
   const [inputdata, setinputdata] = useState({
     username: "",
@@ -22,19 +23,20 @@ function Validate() {
     if (inputdata.username.length > 0) {
       document.querySelector("#name_req").classList.remove("namereq_warning");
     }
-    if (inputdata.username.length < 4) {
+  
+    if (inputdata.username.length  > 2) {
       document.querySelector("#name_long").classList.add("namelong_warning");
     }
     if (inputdata.username.length < 1) {
       document.querySelector("#name_long").classList.remove("namelong_warning");
     }
-    if (inputdata.username.length > 4) {
+    if (inputdata.username.length > 3) {
       document.querySelector("#name_long").classList.remove("namelong_warning");
     }
-    if (inputdata.username.length > 3) {
+    if (inputdata.username.length > 2 ) {
       document.getElementById("input_warning").style.borderColor = "#e52213";
     }
-    if (inputdata.username.length > 5) {
+    if (inputdata.username.length > 3) {
       document.getElementById("input_warning").style.borderColor = "#198754";
     }
   }
@@ -43,9 +45,9 @@ function Validate() {
     if (inputdata.email === "") {
       document.querySelector("#email_req").classList.add("emailreq_warning");
     }
-    // if(inputdata.email.match(/^[A-Za-z]\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
-    //   document.querySelector("#email_invalid").classList.remove("email_warning");
-    // }
+     if(inputdata.email.match(/^[A-Za-z]\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+     document.querySelector("#email_invalid").classList.remove("email_warning");
+   }
   }
 
   function Phone() {
@@ -63,6 +65,14 @@ function Validate() {
     if (inputdata.phoneno.length > 10) {
       document.querySelector("#no_limit").classList.add("nolimit_warning");
     }
+    if (inputdata.phoneno.length < 10) {
+      document.querySelector("#no_limit").classList.add("nolimit_warning");
+    }
+    if (inputdata.phoneno.length === 10) {
+      document.querySelector("#no_limit").classList.remove("nolimit_warning");
+    }
+
+
     if (inputdata.phoneno.length < 1) {
       document.querySelector("#no_limit").classList.remove("nolimit_warning");
     }
@@ -78,6 +88,9 @@ function Validate() {
   }
 
   function submit() {
+
+
+
     if (inputdata.username.length > 4 && inputdata.phoneno.length === 10) {
       let array = userdata;
       array.push({ ...inputdata });
@@ -92,9 +105,13 @@ function Validate() {
         dob: "",
         address: "",
       });
+      if (inputdata.phoneno.length === 10) {
+        document.getElementById("phoneinput_warning").style.borderColor =
+          "black";
+      }
       document.getElementById("input_warning").style.borderColor = "black";
       document.getElementById("emailinput_warning").style.borderColor = "black";
-      document.getElementById("phoneinput_warning").style.borderColor = "black";
+      
     }
     if (inputdata.username === "") {
       document.querySelector("#name_req").classList.add("namereq_warning");
@@ -104,23 +121,15 @@ function Validate() {
     }
 
 
-    
+
     if (inputdata.email === "") {
       document.querySelector("#email_req").classList.add("emailreq_warning");
     }
     if (inputdata.email === "") {
-      document
-        .querySelector("#Emailinput_warning")
-        .classList.add("emailinput_warning");
+      document.querySelector("#Emailinput_warning").classList.add("emailinput_warning");
     }
 
-    //   if(inputdata.email.match(/^[A-Za-z]\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
-    //     document.querySelector("#email_invalid").classList.remove("email_warning");
-    //   }
-    //  else{
-    //   document.querySelector("#email_invalid").classList.remove("email_warning");
-
-    //  }
+  
 
 
     if (inputdata.phoneno === "") {
@@ -129,8 +138,8 @@ function Validate() {
     if (inputdata.phoneno === "") {
       document.getElementById("phoneinput_warning").style.borderColor = "red";
     }
- 
-
+    
+   
 
 
     if (inputdata.age === "") {
@@ -139,15 +148,13 @@ function Validate() {
     if (inputdata.age === "") {
       document.getElementById("ageinput_warning").style.borderColor = "red";
     }
-    if (inputdata.age < 19) {
+    if (inputdata.age < 20 > 1) {
       document.querySelector("#age_limit").classList.add("agelimit_warning");
     }
-    if (inputdata.age > 19) {
+    if (inputdata.age < 1 > 20 ) {
       document.querySelector("#age_limit").classList.remove("agelimit_warning");
     }
-    if (inputdata.age < 19) {
-      document.querySelector("#age_req").classList.remove("agereq_warning");
-    }
+   
 
 
 
@@ -186,7 +193,7 @@ function Validate() {
               <div className="mb-3">
                 <label
                   for="exampleFormControlInput1"
-                  className="form-label name"
+                  className="form-label name_txt"
                 >
                   Name
                 </label>
@@ -237,7 +244,7 @@ function Validate() {
 
             <div className="col-2">
               <div className="mb-3 ">
-                <label for="exampleFormControlInput1" className="form-label ">
+                <label for="exampleFormControlInput1" className="form-label phone_txt ">
                   Phone No
                 </label>
                 <input
@@ -263,7 +270,7 @@ function Validate() {
             </div>
             <div className="col-1">
               <div className="mb-3 ">
-                <label for="quantity">Age</label>
+                <label for="quantity" className="age_txt">Age</label>
 
                 <input
                   onKeyUp={Age}
@@ -284,10 +291,11 @@ function Validate() {
             </div>
             <div className="col-2">
               <div className="mb-3 ">
-                <label for="exampleFormControlInput1" className="form-label">
+                <label for="exampleFormControlInput1" className="form-label dob_txt">
                   Date of Birth
                 </label>
                 <input
+           
                   type="date"
                   className="form-control dob_input "
                   id="dobinput_warning"
@@ -303,7 +311,7 @@ function Validate() {
             </div>
             <div className="col-3">
               <div className="mb-3 ">
-                <label for="exampleFormControlInput1" className="form-label">
+                <label for="exampleFormControlInput1" className="form-label address_txt">
                   Address
                 </label>
                 <input

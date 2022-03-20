@@ -16,18 +16,43 @@
   height: 100vh;
   overflow: hidden;
 }
-.name {
+.name_txt {
   position: relative;
   left: 20px;
 }
-
 .name_input {
   width: 95%;
   position: relative;
   left: 20px;
   border: 1px solid black;
 }
-.nameinput_warning{
+
+.email_txt {
+  position: relative;
+  left: 10px;
+}
+.email_input {
+  width: 95%;
+  position: relative;
+  left: 10px;
+  border: 1px solid black;
+}
+.phoneno_input {
+  width: 95%;
+  position: relative;
+  border: 1px solid black;
+}
+.phoneno_input {
+  width: 97%;
+  position: relative;
+}
+
+input,
+input::-webkit-input-placeholder {
+  font-size: 14px;
+}
+
+.nameinput_warning {
   border-color: red;
 }
 .form-control:focus {
@@ -49,112 +74,103 @@
   left: 35px;
   color: red;
 }
-.name_long{
+.name_long {
   position: absolute;
   left: 35px;
   bottom: -47px;
   color: red;
   display: none;
 }
-.namelong_warning{
+.namelong_warning {
   display: block;
   position: absolute;
   left: 35px;
-  bottom: -47px;
+  bottom: -37px;
   color: red;
+  font-size: 15px;
+  line-height: 18px;
 }
-.email_txt{
-  position: relative;
-  left: 10px; 
-}
-.email_input{
-  width: 95%;
-  position: relative;
-  left: 10px;
-  border: 1px solid black;
-}
-.emailinput_warning{
+
+.emailinput_warning {
   border-color: red;
-}.email_req{
+}
+.email_req {
   position: absolute;
   left: 26px;
   color: red;
   bottom: -25px;
   display: none;
 }
-.emailreq_warning{
+.emailreq_warning {
   display: block;
 }
-.email_invalid{
+.email_invalid {
   position: absolute;
   left: 26px;
   color: red;
   bottom: -25px;
   display: none;
 }
-.email_warning{
+.email_warning {
   position: absolute;
   left: 26px;
   color: red;
   bottom: -25px;
   display: block;
 }
-.phoneno_input{
-  width: 95%;
-  position: relative;
-  border: 1px solid black;
-}
-.no_req{
+
+.no_req {
   color: red;
   position: absolute;
   bottom: 0px;
   left: 15px;
   display: none;
 }
-.noreq_warning{
+.noreq_warning {
   color: red;
   position: absolute;
   bottom: -25px;
   left: 15px;
-  display: block; 
+  display: block;
 }
-.no_limit{
+.no_limit {
   color: red;
   position: absolute;
-left: 15px;
-display: none;
+  left: 15px;
+  display: none;
 }
-.nolimit_warning{
+.nolimit_warning {
   color: red;
   position: absolute;
-left: 15px;
-display: block;
+  left: 15px;
+  display: block;
+  font-size: 15px;
 }
-.no_only{
+.no_only {
   color: red;
   position: absolute;
-left: 15px;
-display: none; 
+  left: 15px;
+  display: none;
 }
 .age_input {
   width: 95%;
   border: 1px solid black;
 }
-.age_req{
+.age_req {
   color: red;
   position: absolute;
   bottom: -25px;
   left: 17px;
   display: none;
 }
-.agereq_warning{
- color: red;
+.agereq_warning {
+  color: red;
   position: absolute;
   bottom: -25px;
   left: 17px;
   display: block;
 }
-.age_limit{
+.age_limit {
   color: red;
   position: absolute;
   bottom: -45px;
@@ -162,36 +178,20 @@ display: none;
   font-size: 15px;
   display: none;
 }
-.agelimit_warning{
+.agelimit_warning {
   color: red;
   position: absolute;
   bottom: -45px;
   left: 17px;
   font-size: 15px;
-  display: block;  
+  display: block;
 }
-.dob_input{
+.dob_input {
   width: 95%;
   position: relative;
   border: 1px solid black;
 }
-.dob_req{
-  color: red;
-  position: absolute;
-  bottom: -25px;
-  left: 17px;
-  font-size: 15px;
- display: none;
-}
-.dobreq_warning{
-  color: red;
-  position: absolute;
-  bottom: -25px;
-  left: 17px;
-  font-size: 15px;
-  display: block; 
-}
-.dob_limit{
+.dob_req {
   color: red;
   position: absolute;
   bottom: -25px;
@@ -199,8 +199,23 @@ display: none;
   font-size: 15px;
   display: none;
 }
-.doblimit_warning{
-
+.dobreq_warning {
+  color: red;
+  position: absolute;
+  bottom: -25px;
+  left: 17px;
+  font-size: 15px;
+  display: block;
+}
+.dob_limit {
+  color: red;
+  position: absolute;
+  bottom: -25px;
+  left: 17px;
+  font-size: 15px;
+  display: none;
+}
+.doblimit_warning {
   color: red;
   position: absolute;
   bottom: -25px;
@@ -214,7 +229,7 @@ display: none;
   border: 1px solid black;
 }
 
-.address_req{
+.address_req {
   color: red;
   position: absolute;
   bottom: -25px;
@@ -222,20 +237,20 @@ display: none;
   font-size: 15px;
   display: none;
 }
-.addressreq_warning{
+.addressreq_warning {
   color: red;
   position: absolute;
   bottom: -25px;
   left: 17px;
   font-size: 15px;
-  display: block; 
+  display: block;
 }
-
 
 .submit {
   position: absolute;
   left: 25px;
-  top: 35px;
+  top: 30px;
+  font-size: 15px;
 }
 .tbl {
   padding: 0;
@@ -246,7 +261,7 @@ display: none;
   background-color: #28a8e0;
   color: white;
   height: 35px;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .tbdy {

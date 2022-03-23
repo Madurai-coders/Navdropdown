@@ -4,9 +4,9 @@
   margin-top: 9px;
 }
 .form {
-  height: 20%;
-  width: 100%;
-  margin-left: 20px;
+  height: 22%;
+  width: 98.6%;
+  margin-left: 10px;
   margin-top: 10px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -19,9 +19,11 @@
 .name_txt {
   position: relative;
   left: 20px;
+  font-size: 13px;
 }
 .name_input {
   width: 95%;
+  height: 30px;
   position: relative;
   left: 20px;
   border: 1px solid black;
@@ -30,26 +32,51 @@
 .email_txt {
   position: relative;
   left: 10px;
+ font-size: 13px;
 }
 .email_input {
   width: 95%;
+  height: 30px;
   position: relative;
   left: 10px;
   border: 1px solid black;
 }
+.phone_txt{
+  font-size: 13px;
+}
 .phoneno_input {
   width: 95%;
+  height: 30px;
   position: relative;
   border: 1px solid black;
 }
-.phoneno_input {
-  width: 97%;
-  position: relative;
+.age_txt{
+  font-size: 13px;
+}
+.age_input{
+  height: 30px;
+}
+.dob_txt{
+  font-size: 13px;
+}
+.dob_input{
+  height: 30px;
+}
+.address_txt{
+  font-size: 13px;
+}
+.address_input{
+  height: 30px;
+  
 }
 
+input[type=date]{
+font-size: 11.5px;
+
+}
 input,
 input::-webkit-input-placeholder {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .nameinput_warning {
@@ -70,9 +97,10 @@ input::-webkit-input-placeholder {
 .namereq_warning {
   display: block;
   position: absolute;
-  bottom: -25px;
+  bottom: -20px;
   left: 35px;
   color: red;
+  font-size: 13px;
 }
 .name_long {
   position: absolute;
@@ -85,12 +113,47 @@ input::-webkit-input-placeholder {
   display: block;
   position: absolute;
   left: 35px;
-  bottom: -37px;
+  bottom: -29px;
   color: red;
-  font-size: 15px;
-  line-height: 18px;
+  font-size: 13px;
+  line-height: 13px;
 }
-
+.space{
+  font-size: 13px;
+  color: red;
+  position: absolute;
+  bottom: -30px;
+  left: 35px;
+  line-height: 13px;
+  display: none;
+}
+.space_warning{
+  display: block;
+}
+.email_space{
+  font-size: 13px;
+  color: red;
+  position: absolute;
+  bottom: -30px;
+  left: 30px;
+  line-height: 13px;
+  display: none;
+}
+.emailspace_warning{
+  display: block;
+}
+.no_space{
+  font-size: 13px;
+  color: red;
+  position: absolute;
+  bottom: -30px;
+  left: 20px;
+  line-height: 14px; 
+  display:none;
+}
+.nospace_warning{
+  display: block;
+}
 .emailinput_warning {
   border-color: red;
 }
@@ -103,6 +166,11 @@ input::-webkit-input-placeholder {
 }
 .emailreq_warning {
   display: block;
+  font-size: 13px;
+  position: absolute;
+ 
+  bottom: -20px;
+
 }
 .email_invalid {
   position: absolute;
@@ -115,8 +183,9 @@ input::-webkit-input-placeholder {
   position: absolute;
   left: 26px;
   color: red;
-  bottom: -25px;
+  bottom: -20px;
   display: block;
+  font-size: 13px;
 }
 
 .no_req {
@@ -129,8 +198,9 @@ input::-webkit-input-placeholder {
 .noreq_warning {
   color: red;
   position: absolute;
-  bottom: -25px;
+  bottom: -20px;
   left: 15px;
+  font-size: 13px;
   display: block;
 }
 .no_limit {
@@ -144,13 +214,26 @@ input::-webkit-input-placeholder {
   position: absolute;
   left: 15px;
   display: block;
-  font-size: 15px;
+  font-size: 13px;
 }
 .no_only {
   color: red;
   position: absolute;
   left: 15px;
   display: none;
+}
+.noonly_warning{
+  display: block;
+}
+.digits{
+  color: red;
+  font-size: 13px;
+  position: absolute;
+  left: 20px;
+  display: none;
+}
+.digits_warning{
+  display: block;
 }
 .age_input {
   width: 95%;
@@ -166,9 +249,11 @@ input::-webkit-input-placeholder {
 .agereq_warning {
   color: red;
   position: absolute;
-  bottom: -25px;
+  bottom: -20px;
   left: 17px;
+  font-size: 13px;
   display: block;
+  line-height: 15px;
 }
 .age_limit {
   color: red;
@@ -181,9 +266,20 @@ input::-webkit-input-placeholder {
 .agelimit_warning {
   color: red;
   position: absolute;
-  bottom: -45px;
+  bottom: -32px;
   left: 17px;
-  font-size: 15px;
+  font-size: 12px;
+  line-height: 15px;
+  display: block;
+}
+.address_space{
+  font-size: 12px;
+  color: red;
+  position: absolute;
+  line-height: 14px;
+  display: none;
+}
+.addressspace_warning{
   display: block;
 }
 .dob_input {
@@ -196,15 +292,14 @@ input::-webkit-input-placeholder {
   position: absolute;
   bottom: -25px;
   left: 17px;
-  font-size: 15px;
   display: none;
 }
 .dobreq_warning {
   color: red;
   position: absolute;
-  bottom: -25px;
+  bottom: -20px;
   left: 17px;
-  font-size: 15px;
+  font-size: 13px;
   display: block;
 }
 .dob_limit {
@@ -225,7 +320,7 @@ input::-webkit-input-placeholder {
 }
 
 .address_input {
-  width: 90%;
+  width: 93.5%;
   border: 1px solid black;
 }
 
@@ -240,28 +335,40 @@ input::-webkit-input-placeholder {
 .addressreq_warning {
   color: red;
   position: absolute;
-  bottom: -25px;
+  bottom: -20px;
   left: 17px;
-  font-size: 15px;
+  font-size: 13px;
+  display: block;
+}
+.address_limit{
+  font-size: 13px;
+  position: absolute;
+  bottom: -30px;
+  line-height: 15px;
+  color: red;
+  left: 17px;
+  display: none;
+}
+.addresslimit_warning{
   display: block;
 }
 
 .submit {
-  position: absolute;
-  left: 25px;
-  top: 30px;
-  font-size: 15px;
+ position: absolute;
+ left: 5px;
+  font-size: 12px;
+  
 }
 .tbl {
   padding: 0;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .heading {
   background-color: #28a8e0;
   color: white;
   height: 35px;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .tbdy {
@@ -277,4 +384,181 @@ tbody tr {
 }
 thead {
   width: calc(100% - 1em);
+}
+.overlay{
+  position: fixed; /* Sit on top of the page content */
+display: none;
+  width: 20%; /* Full width (cover the whole page) */
+  height: 20%; /* Full height (cover the whole page) */
+  top: 60%;
+  left: 40%;
+  right: 0;
+  bottom: 0;
+  background-color: white; /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+  box-shadow: 1px 1px 1px 1px  rgba(0,0,0,0.2);
+}
+.overlay_show{
+  display: block;
+}
+
+
+.successfully{
+  font-size: 50px;
+  color:rgb(25,135,84) ;
+}
+@media only screen and (max-width: 1153px) {
+  .namelong_warning{
+font-size: 11px;
+  }
+  .heading{
+    font-size: 13px;
+  }
+  .agereq_warning{
+    position: absolute;
+    bottom: -30px;
+  }
+ 
+  
+}
+@media only screen and (max-width: 1053px) {
+  .namereq_warning{
+    font-size: 12px;
+  }
+  .emailreq_warning{
+    font-size: 12px;
+  }
+  .noreq_warning{
+    font-size: 12px;
+  }
+  .nolimit_warning{
+    line-height: 15px;
+  }
+  .agereq_warning{
+    font-size: 11px;
+  }
+.agelimit_warning{
+  font-size: 11px;
+}
+.dobreq_warning{
+  font-size: 12px;
+}
+.addresslimit_warning{
+  font-size: 12px;
+}
+}
+@media only screen and (max-width: 1005px) {
+  .namelong_warning{
+font-size: 10px;
+line-height: 10px;
+position: absolute;
+bottom: -24px
+
+  }
+}
+@media only screen and (max-width: 986px) {
+  .namereq_warning{
+    position: absolute;
+    bottom: -32px;
+    line-height: 15px;
+  }
+  .emailreq_warning{
+    font-size: 12px;
+  }
+  .nolimit_warning{
+    font-size: 11px;
+  }
+  .dobreq_warning{
+    font-size: 11px;
+  }
+  .agereq_warning{
+    font-size: 11px;
+  }
+  .addressreq_warning{
+    font-size: 12px;
+  }
+}
+
+
+@media only screen and (max-width: 930px) {
+  .namelong_warning{
+font-size: 10px;
+line-height: 10px;
+position: absolute;
+bottom: -31px;
+  }
+  .email_warning{
+    font-size: 12px;
+  }
+  .nolimit_warning{
+    line-height: 16px;
+    font-size: 11px;
+  }
+  .agelimit_warning{
+    position: absolute;
+    bottom: -35px;
+    font-size: 11px;
+    line-height: 11px;
+  }
+  .addresslimit_warning{
+    font-size: 11px;
+  }
+}
+@media only screen and (max-width: 881px) {
+  .dobreq_warning{
+    line-height: 14px;
+    position: absolute;
+    bottom: -30px;
+  }
+.addresslimit_warning{
+  font-size: 10px;
+}
+}
+@media only screen and (max-width: 811px) {
+  .noreq_warning{
+    position: absolute;
+    bottom: -30px;
+    line-height: 14px;
+  }
+  .agereq_warning{
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  }
+
+  @media only screen and (max-width: 776px) {
+    .addresslimit_warning{
+      font-size: 11px;
+    }}
+
+
+@media only screen and (max-width: 736px) {
+  .emailreq_warning{
+    position: absolute;
+    font-size: 12px;
+    bottom: -32px;
+    line-height: 15px;
+  }
+  
+}
+@media only screen and (max-width: 723px) {
+  .namelong_warning{
+font-size: 9px;
+line-height: 10px;
+position: absolute;
+bottom: -31px;
+  }
+}
+@media only screen and (max-width: 669px) {
+  .namelong_warning{
+font-size: 8px;
+line-height: 10px;
+position: absolute;
+bottom: -31px;
+  }
+  .heading{
+    font-size: 12px;
+  }
 }

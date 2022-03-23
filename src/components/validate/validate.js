@@ -158,7 +158,7 @@ function Validate() {
       setuserdata([...array]);
 
       setinputdata({
-        username: "priya",
+        username: "",
         email: "",
         phoneno: "",
         age: "",

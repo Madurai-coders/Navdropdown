@@ -355,7 +355,7 @@ body {
 @media only screen and (max-width: 1701px) {
   .sidebar .profile_cnt {
     position: relative;
-    top: 220px;
+    top: 70px;
     color: #fff;
     left: 0px;
   }
@@ -379,6 +379,7 @@ body {
     padding: 6px 14px;
   }
 }
+
 
 @media only screen and (max-width: 540px) {
   .sidebar.close_1 {

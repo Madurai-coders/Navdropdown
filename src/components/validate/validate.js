@@ -1,7 +1,6 @@
 import "./validate.css";
 import React, { useState } from "react";
-import { FavoriteBorderOutlined } from "@material-ui/icons";
-
+import moment from 'moment';
 function Validate() {
   const [inputdata, setinputdata] = useState({
     username: "",
@@ -31,8 +30,11 @@ function Validate() {
       document.getElementById("input_warning").style.borderColor = "#198754";
     }
 
-    var nonwhite_space = /\S/g;
-    if (inputdata.username.match(nonwhite_space)) {
+    var name_space = /^\s/g;
+    if (inputdata.username.match(name_space)) {
+      document.querySelector("#space").classList.add("space_warning");
+    }
+    else{
       document.querySelector("#space").classList.remove("space_warning");
     }
   }
@@ -59,11 +61,16 @@ function Validate() {
         .querySelector("#email_invalid")
         .classList.remove("email_warning");
     }
-    var email_space = /\s/g;
+    var email_space = /^\s/g;
     if (inputdata.email.match(email_space)) {
       document
         .querySelector("#email_space")
-        .classList.remove("emailspace_warning");
+        .classList.add("emailspace_warning");
+    }
+    else{
+      document
+        .querySelector("#email_space")
+        .classList.remove("emailspace_warning"); 
     }
   }
 
@@ -92,10 +99,7 @@ function Validate() {
     if (inputdata.phoneno.length > 0) {
       document.querySelector("#no_req").classList.remove("noreq_warning");
     }
-    // var no_space = /\s/g;
-    // if (inputdata.phoneno.match(no_space)) {
-    //   document.querySelector("#no_space").classList.remove("nospace_warning");
-    // }
+    
   }
 
   function Age() {
@@ -107,6 +111,15 @@ function Validate() {
     } else {
       document.getElementById("ageinput_warning").style.borderColor = "#e52213";
     }
+  }
+  function dob (){
+    if (moment(inputdata.dob).isBetween('1955-12-31', '1999-01-01', 'year')) {
+      document.querySelector("#dob_limit").classList.remove("doblimit_warning");
+    }
+  else{
+    document.querySelector("#dob_limit").classList.add("doblimit_warning");
+  
+  }
   }
 
   function address() {
@@ -135,23 +148,31 @@ function Validate() {
       document.getElementById("addressinput_warning").style.borderColor =
         "#e52213";
     }
-    var address_space = /\s/g;
+    var address_space = /^\s/g;
     if (inputdata.address.match(address_space)) {
       document
         .querySelector("#address_space")
-        .classList.remove("addressspace_warning");
+        .classList.add("addressspace_warning");
+    }
+    else{
+      document
+      .querySelector("#address_space")
+      .classList.remove("addressspace_warning");
     }
   }
 
   function submit() {
-    if (
-      inputdata.username.length > 4 &&
-      inputdata.phoneno.length === 10 &&
-      inputdata.email &&
-      inputdata.age &&
-      inputdata.dob &&
-      inputdata.address.length > 15
-    ) {
+     if (
+       inputdata.username.length > 4 &&
+       inputdata.phoneno.length === 10 &&
+       inputdata.email &&
+       inputdata.age &&
+       inputdata.dob &&
+       inputdata.address.length > 15
+     )    {
+
+
+    
       let array = userdata;
       array.push({ ...inputdata });
       console.log(array);
@@ -165,7 +186,7 @@ function Validate() {
         dob: "",
         address: "",
       });
-      console.log(inputdata.age)
+    
 
       document.getElementById("phoneinput_warning").style.borderColor = "black";
       document.getElementById("input_warning").style.borderColor = "black";
@@ -189,29 +210,6 @@ function Validate() {
       document.getElementById("input_warning").style.borderColor = "red";
     }
 
-    var white_space = /\s/g;
-    if (inputdata.username.match(white_space)) {
-      document.querySelector("#space").classList.add("space_warning");
-    }
-
-    var email_space = /\s/g;
-    if (inputdata.email.match(email_space)) {
-      document
-        .querySelector("#email_space")
-        .classList.add("emailspace_warning");
-    }
-
-    //  var no_space = /\s/g;
-    //  if (inputdata.phoneno.match(no_space)) {
-    //    document.querySelector("#no_space").classList.add("nospace_warning");
-    //   }
-
-    var address_space = /\s/g;
-    if (inputdata.address.match(address_space)) {
-      document
-        .querySelector("#address_space")
-        .classList.add("addressspace_warning");
-    }
 
     if (inputdata.email === "") {
       document.querySelector("#email_req").classList.add("emailreq_warning");
@@ -254,10 +252,23 @@ function Validate() {
         .classList.add("addressreq_warning");
     }
 
-    var date_regex = /^(19[5-9]\d|20[0-4]\d|2050)$/;
-    if (date_regex.match(inputdata.dob)) {
-      document.querySelector("#dob_req").classList.add("dobreq_warning");
-    }
+    
+
+    
+  if (moment(inputdata.dob).isBetween('1955-12-31', '1999-01-01', 'year')) {
+    document.querySelector("#dob_limit").classList.remove("doblimit_warning");
+  }
+else{
+  document.querySelector("#dob_limit").classList.add("doblimit_warning");
+
+}
+ 
+
+ 
+ 
+
+
+
 
   }
   return (
@@ -366,6 +377,7 @@ function Validate() {
                 </label>
 
                 <input
+                value={inputdata.age}
                   onKeyUp={Age}
                   type="number"
                   className="form-control age_input"
@@ -394,6 +406,8 @@ function Validate() {
                   Date of Birth
                 </label>
                 <input
+                onKeyUp={dob}
+                value={inputdata.dob}
                   type="date"
                   onChange={(e) =>
                     setinputdata({ ...inputdata, dob: e.target.value })
@@ -419,6 +433,7 @@ function Validate() {
                   Address
                 </label>
                 <input
+                value={inputdata.address}
                   onKeyUp={address}
                   placeholder="Flat NO/Street/Area/District"
                   type="text"
@@ -469,7 +484,7 @@ function Validate() {
               {userdata.map((value) => {
                 return (
                   <tr>
-                    <th scope="row">{value.username}</th>
+                    <td>{value.username}</td>
                     <td>{value.email}</td>
                     <td>{value.phoneno} </td>
                     <td>{value.age}</td>
@@ -483,9 +498,7 @@ function Validate() {
           <div className="col-6"> 
           <div className="overlay text-center" id="card">
            
-                <i
-                  class=" mt-4 successfully fa fa-check-circle"
-                  aria-hidden="true"
+                <i class=" mt-4 successfully fa fa-check-circle"aria-hidden="true"
                 ></i>
                 <h5 className="mt-4">Data Entered Successfully</h5>
             </div>

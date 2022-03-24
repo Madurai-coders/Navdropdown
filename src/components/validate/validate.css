@@ -313,9 +313,9 @@ input::-webkit-input-placeholder {
 .doblimit_warning {
   color: red;
   position: absolute;
-  bottom: -25px;
+  bottom: -20px;
   left: 17px;
-  font-size: 15px;
+  font-size: 13px;
   display: block;
 }
 
@@ -374,14 +374,17 @@ input::-webkit-input-placeholder {
 .tbdy {
   display: block;
   max-height: 395px;
-  overflow-y: auto;
+  
 }
 thead,
-tbody tr {
+tbody tr{
   display: table;
   width: 100%;
   table-layout: fixed;
+  
 }
+
+
 thead {
   width: calc(100% - 1em);
 }
@@ -426,6 +429,7 @@ font-size: 11px;
   .namereq_warning{
     font-size: 12px;
   }
+
   .emailreq_warning{
     font-size: 12px;
   }
@@ -448,7 +452,7 @@ font-size: 11px;
   font-size: 12px;
 }
 }
-@media only screen and (max-width: 1005px) {
+@media only screen and (max-width: 1016px) {
   .namelong_warning{
 font-size: 10px;
 line-height: 10px;
@@ -479,7 +483,13 @@ bottom: -24px
     font-size: 12px;
   }
 }
-
+@media only screen and (max-width: 944px) {
+  .namelong_warning{
+    font-size: 10px;
+    line-height: 10px;
+    position: absolute;
+    bottom: -32px;
+      }}
 
 @media only screen and (max-width: 930px) {
   .namelong_warning{

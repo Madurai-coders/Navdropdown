@@ -1,7 +1,9 @@
 import "./validate.css";
 import React, { useState } from "react";
-import moment from 'moment';
+import moment from "moment";
 function Validate() {
+  const [success, setsuccess] = useState(false);
+
   const [inputdata, setinputdata] = useState({
     username: "",
     email: "",
@@ -17,24 +19,44 @@ function Validate() {
     if (inputdata.username.length < 1) {
       document.querySelector("#name_req").classList.add("namereq_warning");
       document.querySelector("#name_long").classList.remove("namelong_warning");
+      document.getElementById("input_warning").style.borderColor = "red";
+
     } else {
       document.querySelector("#name_req").classList.remove("namereq_warning");
     }
-    if (inputdata.username.length > 2) {
+    if (inputdata.username.length === 2) {
       document.querySelector("#name_long").classList.add("namelong_warning");
-      document.getElementById("input_warning").style.borderColor = "#e52213";
+    } else {
+      document.querySelector("#name_long").classList.remove("namelong_warning");
+    }
+    if (inputdata.username.length >= 11) {
+      document.querySelector("#name_limit").classList.add("namelimit_warning");
+      document.getElementById("input_warning").style.borderColor = "red";
+    } else {
+      document
+        .querySelector("#name_limit")
+        .classList.remove("namelimit_warning");
+    }
+    if (inputdata.username.length > 3 && inputdata.username.length < 11) {
+      document.getElementById("input_warning").style.borderColor = "black";
+    } else {
+      document.getElementById("input_warning").style.borderColor = "red";
+    }
+ 
+    var word = /[^a-zA-Z]/;
+    if (inputdata.username .match(word)){
+      document.querySelector("#letters").classList.add("letters_warning");         
+    }
+    else {
+               document.querySelector("#letters").classList.remove("letters_warning");         
     }
 
-    if (inputdata.username.length > 3) {
-      document.querySelector("#name_long").classList.remove("namelong_warning");
-      document.getElementById("input_warning").style.borderColor = "#198754";
-    }
+
 
     var name_space = /^\s/g;
     if (inputdata.username.match(name_space)) {
       document.querySelector("#space").classList.add("space_warning");
-    }
-    else{
+    } else {
       document.querySelector("#space").classList.remove("space_warning");
     }
   }
@@ -45,8 +67,7 @@ function Validate() {
       document
         .querySelector("#email_invalid")
         .classList.remove("email_warning");
-      document.getElementById("Emailinput_warning").style.borderColor =
-        "#198754";
+      document.getElementById("Emailinput_warning").style.borderColor = "black";
     } else {
       document.querySelector("#email_invalid").classList.add("email_warning");
       document.getElementById("Emailinput_warning").style.borderColor =
@@ -66,113 +87,90 @@ function Validate() {
       document
         .querySelector("#email_space")
         .classList.add("emailspace_warning");
-    }
-    else{
+    } else {
       document
         .querySelector("#email_space")
-        .classList.remove("emailspace_warning"); 
+        .classList.remove("emailspace_warning");
     }
   }
 
   function Phone() {
-    if (inputdata.phoneno === "") {
-      document.querySelector("#no_req").classList.add("noreq_warning");
-    }
-    if (inputdata.phoneno.length > 5) {
-      document.getElementById("phoneinput_warning").style.borderColor =
-        "#e52213";
-    }
     if (inputdata.phoneno.length === 10) {
-      document.getElementById("phoneinput_warning").style.borderColor =
-        "#198754";
+      document.getElementById("phoneinput_warning").style.borderColor = "black";
       document.querySelector("#no_limit").classList.remove("nolimit_warning");
+    } else {
+      document.getElementById("phoneinput_warning").style.borderColor = "red";
     }
     if (inputdata.phoneno.length > 10) {
       document.querySelector("#no_limit").classList.add("nolimit_warning");
-    }
-    if (inputdata.phoneno.length < 10) {
-      document.querySelector("#no_limit").classList.add("nolimit_warning");
+    } else {
+      document.querySelector("#no_limit").classList.remove("nolimit_warning");
     }
     if (inputdata.phoneno.length < 1) {
       document.querySelector("#no_limit").classList.remove("nolimit_warning");
+      document.querySelector("#no_req").classList.add("noreq_warning");
     }
     if (inputdata.phoneno.length > 0) {
       document.querySelector("#no_req").classList.remove("noreq_warning");
     }
-    
-  }
-
-  function Age() {
-    if (inputdata.age.length === "") {
-      document.querySelector("#age_req").classList.add("agereq_warning");
-    }
-    if (inputdata.age > 20) {
-      document.getElementById("ageinput_warning").style.borderColor = "#198754";
+    var digit = /[^0-9]/g;
+    if (inputdata.phoneno.match(digit)) {
+      document.querySelector("#digits").classList.add("digits_warning");
     } else {
-      document.getElementById("ageinput_warning").style.borderColor = "#e52213";
+      document.querySelector("#digits").classList.remove("digits_warning");
     }
   }
-  function dob (){
-    if (moment(inputdata.dob).isBetween('1955-12-31', '1999-01-01', 'year')) {
+  function Age() {
+    if (inputdata.age < 20 || inputdata.age > 75) {
+      document.getElementById("ageinput_warning").style.borderColor = "red";
+    } else {
+      document.getElementById("ageinput_warning").style.borderColor = "black";
+    }
+  }
+  function dob() {
+    if (inputdata.dob === "") {
       document.querySelector("#dob_limit").classList.remove("doblimit_warning");
     }
-  else{
-    document.querySelector("#dob_limit").classList.add("doblimit_warning");
-  
-  }
   }
 
   function address() {
-    if (inputdata.address.length > 252) {
+    if (inputdata.address.length > 152) {
       document
         .querySelector("#address_limit")
         .classList.add("addresslimit_warning");
+      document.getElementById("addressinput_warning").style.borderColor = "red";
     } else {
       document
         .querySelector("#address_limit")
         .classList.remove("addresslimit_warning");
+      document.getElementById("addressinput_warning").style.borderColor =
+        "black";
     }
     if (inputdata.address.length < 1) {
       document
         .querySelector("#address_req")
         .classList.add("addressreq_warning");
+      document.getElementById("addressinput_warning").style.borderColor = "red";
     } else {
       document
         .querySelector("#address_req")
         .classList.remove("addressreq_warning");
     }
-    if (inputdata.address.length > 150) {
-      document.getElementById("addressinput_warning").style.borderColor =
-        "#198754";
-    } else {
-      document.getElementById("addressinput_warning").style.borderColor =
-        "#e52213";
-    }
+
     var address_space = /^\s/g;
     if (inputdata.address.match(address_space)) {
       document
         .querySelector("#address_space")
         .classList.add("addressspace_warning");
-    }
-    else{
+    } else {
       document
-      .querySelector("#address_space")
-      .classList.remove("addressspace_warning");
+        .querySelector("#address_space")
+        .classList.remove("addressspace_warning");
     }
   }
 
   function submit() {
-     if (
-       inputdata.username.length > 4 &&
-       inputdata.phoneno.length === 10 &&
-       inputdata.email &&
-       inputdata.age &&
-       inputdata.dob &&
-       inputdata.address.length > 15
-     )    {
-
-
-    
+    if (inputdata.username && inputdata.email && inputdata.phoneno && inputdata.age && inputdata.dob && inputdata.address) {
       let array = userdata;
       array.push({ ...inputdata });
       console.log(array);
@@ -186,46 +184,45 @@ function Validate() {
         dob: "",
         address: "",
       });
-    
-
-      document.getElementById("phoneinput_warning").style.borderColor = "black";
-      document.getElementById("input_warning").style.borderColor = "black";
-      document.getElementById("Emailinput_warning").style.borderColor = "black";
-      document.getElementById("addressinput_warning").style.borderColor =
-        "black";
-      document.getElementById("ageinput_warning").style.borderColor = "black";
-      document.getElementById("dobinput_warning").style.borderColor = "black";
-
-      setTimeout(function () {
-
-        document.querySelector("#card").classList.add("overlay_show");
-      }, 1000);
-
-      setTimeout(function() {
-        document.getElementById('card').style.display = "none";
-     }, 2000);
     }
+
+     
+     
+       setTimeout(function () {
+         document.getElementById("card").style.display = "none";
+       }, 2000);
+     
+
+       if (inputdata.username === "" && inputdata.email === "" && inputdata.phoneno ==="" && inputdata.age === "" && inputdata.dob === "" && inputdata.address === "") {
+setsuccess(false)
+       }
     if (inputdata.username === "") {
       document.querySelector("#name_req").classList.add("namereq_warning");
       document.getElementById("input_warning").style.borderColor = "red";
     }
-
-
     if (inputdata.email === "") {
       document.querySelector("#email_req").classList.add("emailreq_warning");
       document
         .querySelector("#Emailinput_warning")
         .classList.add("emailinput_warning");
     }
-
     if (inputdata.phoneno === "") {
       document.querySelector("#no_req").classList.add("noreq_warning");
       document.getElementById("phoneinput_warning").style.borderColor = "red";
     }
-
     if (inputdata.age === "") {
       document.querySelector("#age_req").classList.add("agereq_warning");
       document.getElementById("ageinput_warning").style.borderColor = "red";
+    }
+    if (inputdata.dob === "") {
+      document.querySelector("#dob_req").classList.add("dobreq_warning");
+      document.getElementById("dobinput_warning").style.borderColor = "red";
+    }
+    if (inputdata.address === "") {
+      document.getElementById("addressinput_warning").style.borderColor = "red";
+      document
+        .querySelector("#address_req")
+        .classList.add("addressreq_warning");
     }
 
     var above = /^2[0-9]|7[0-5]$/;
@@ -241,35 +238,14 @@ function Validate() {
       document.querySelector("#age_limit").classList.add("agelimit_warning");
     }
 
-    if (inputdata.dob === "") {
-      document.querySelector("#dob_req").classList.add("dobreq_warning");
-      document.getElementById("dobinput_warning").style.borderColor = "red";
+    if (
+      moment(inputdata.dob).isBetween("1955-12-31", "1999-01-01", "year") ||
+      inputdata.dob === ""
+    ) {
+      document.querySelector("#dob_limit").classList.remove("doblimit_warning");
+    } else {
+      document.querySelector("#dob_limit").classList.add("doblimit_warning");
     }
-    if (inputdata.address === "") {
-      document.getElementById("addressinput_warning").style.borderColor = "red";
-      document
-        .querySelector("#address_req")
-        .classList.add("addressreq_warning");
-    }
-
-    
-
-    
-  if (moment(inputdata.dob).isBetween('1955-12-31', '1999-01-01', 'year')) {
-    document.querySelector("#dob_limit").classList.remove("doblimit_warning");
-  }
-else{
-  document.querySelector("#dob_limit").classList.add("doblimit_warning");
-
-}
- 
-
- 
- 
-
-
-
-
   }
   return (
     <>
@@ -298,11 +274,18 @@ else{
               <p className="space" id="space">
                 Please Check Your Fields For Spaces
               </p>
+              <p className="letters" id="letters">
+                Only letters
+                
+              </p>
               <p className="name_req" id="name_req">
                 Username is Required
               </p>
               <p className="name_long" id="name_long">
                 Username is must be longer than 4 characters
+              </p>
+              <p className="name_limit" id="name_limit">
+                Username is must be less than 10 characters
               </p>
             </div>
             <div className="col-2">
@@ -356,17 +339,12 @@ else{
                 <p className="digits" id="digits">
                   Digits only
                 </p>
-                <p className="no_space" id="no_space">
-                  Please Check Your Fields For Spaces
-                </p>
+
                 <p className="no_req" id="no_req">
                   Phone no is required
                 </p>
                 <p className="no_limit" id="no_limit">
                   phone no should be 10 digits
-                </p>
-                <p className="no_only" id="no_only">
-                  Only digits
                 </p>
               </div>
             </div>
@@ -377,7 +355,7 @@ else{
                 </label>
 
                 <input
-                value={inputdata.age}
+                  value={inputdata.age}
                   onKeyUp={Age}
                   type="number"
                   className="form-control age_input"
@@ -406,8 +384,8 @@ else{
                   Date of Birth
                 </label>
                 <input
-                onKeyUp={dob}
-                value={inputdata.dob}
+                  onKeyUp={dob}
+                  value={inputdata.dob}
                   type="date"
                   onChange={(e) =>
                     setinputdata({ ...inputdata, dob: e.target.value })
@@ -433,7 +411,7 @@ else{
                   Address
                 </label>
                 <input
-                value={inputdata.address}
+                  value={inputdata.address}
                   onKeyUp={address}
                   placeholder="Flat NO/Street/Area/District"
                   type="text"
@@ -458,7 +436,10 @@ else{
 
           <div className="col-4 m-3">
             <button
-              onClick={submit}
+              onClick={() => {
+                setsuccess(true);
+                submit();
+              }}
               type="button"
               className=" submit btn btn-success"
             >
@@ -495,14 +476,20 @@ else{
               })}
             </tbody>
           </table>
-          <div className="col-6"> 
-          <div className="overlay text-center" id="card">
-           
-                <i class=" mt-4 successfully fa fa-check-circle"aria-hidden="true"
-                ></i>
-                <h5 className="mt-4">Data Entered Successfully</h5>
-            </div>
-          </div>
+          {success && ( 
+            <>
+              <div className="col-6">
+                <div className="overlay text-center" id="card">
+                  <i
+                    onClick={() => setsuccess(false)}
+                    class=" mt-4 successfully fa fa-check-circle"
+                    aria-hidden="true"
+                  ></i>
+                  <h5 className="mt-4">Data Entered Successfully</h5>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </>

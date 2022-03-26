@@ -130,6 +130,18 @@ input::-webkit-input-placeholder {
 .space_warning{
   display: block;
 }
+.name_limit{
+  font-size: 13px;
+  color: red;
+  position: absolute;
+  line-height: 13px;
+  bottom: -30px;
+  left: 35px;
+  display: none;
+}
+.namelimit_warning{
+  display: block;
+}
 .email_space{
   font-size: 13px;
   color: red;
@@ -153,6 +165,17 @@ input::-webkit-input-placeholder {
 }
 .nospace_warning{
   display: block;
+}
+.letters{
+  display: none;
+}
+.letters_warning{
+  display: block;
+  position: absolute;
+  color: red;
+  font-size: 13px;
+  left: 35px;
+  bottom: -20px;
 }
 .emailinput_warning {
   border-color: red;
@@ -390,7 +413,6 @@ thead {
 }
 .overlay{
   position: fixed; /* Sit on top of the page content */
-display: none;
   width: 20%; /* Full width (cover the whole page) */
   height: 20%; /* Full height (cover the whole page) */
   top: 60%;
@@ -402,9 +424,7 @@ display: none;
   cursor: pointer; /* Add a pointer on hover */
   box-shadow: 1px 1px 1px 1px  rgba(0,0,0,0.2);
 }
-.overlay_show{
-  display: block;
-}
+
 
 
 .successfully{

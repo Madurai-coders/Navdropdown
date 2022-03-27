@@ -1,252 +1,52 @@
 import "./validate.css";
 import React, { useState } from "react";
 import moment from "moment";
+import { validation_name } from "./validate_functions";
 function Validate() {
+
+
   const [success, setsuccess] = useState(false);
 
   const [inputdata, setinputdata] = useState({
-    username: "",
+    username: "not_selected",
     email: "",
     phoneno: "",
     age: "",
     dob: "",
     address: "",
   });
+
   console.log(inputdata);
+
+
   const [userdata, setuserdata] = useState([]);
 
-  function username() {
-    if (inputdata.username.length < 1) {
-      document.querySelector("#name_req").classList.add("namereq_warning");
-      document.querySelector("#name_long").classList.remove("namelong_warning");
-      document.getElementById("input_warning").style.borderColor = "red";
-
-    } else {
-      document.querySelector("#name_req").classList.remove("namereq_warning");
-    }
-    if (inputdata.username.length === 2) {
-      document.querySelector("#name_long").classList.add("namelong_warning");
-    } else {
-      document.querySelector("#name_long").classList.remove("namelong_warning");
-    }
-    if (inputdata.username.length >= 11) {
-      document.querySelector("#name_limit").classList.add("namelimit_warning");
-      document.getElementById("input_warning").style.borderColor = "red";
-    } else {
-      document
-        .querySelector("#name_limit")
-        .classList.remove("namelimit_warning");
-    }
-    if (inputdata.username.length > 3 && inputdata.username.length < 11) {
-      document.getElementById("input_warning").style.borderColor = "black";
-    } else {
-      document.getElementById("input_warning").style.borderColor = "red";
-    }
- 
-    var word = /[^a-zA-Z]/;
-    if (inputdata.username .match(word)){
-      document.querySelector("#letters").classList.add("letters_warning");         
-    }
-    else {
-               document.querySelector("#letters").classList.remove("letters_warning");         
-    }
 
 
 
-    var name_space = /^\s/g;
-    if (inputdata.username.match(name_space)) {
-      document.querySelector("#space").classList.add("space_warning");
-    } else {
-      document.querySelector("#space").classList.remove("space_warning");
-    }
-  }
 
-  function Email() {
-    var regex = /\S+@\S+\.\S+/;
-    if (regex.test(inputdata.email)) {
-      document
-        .querySelector("#email_invalid")
-        .classList.remove("email_warning");
-      document.getElementById("Emailinput_warning").style.borderColor = "black";
-    } else {
-      document.querySelector("#email_invalid").classList.add("email_warning");
-      document.getElementById("Emailinput_warning").style.borderColor =
-        "#e52213";
-    }
-    if (inputdata.email.length > 0) {
-      document.querySelector("#email_req").classList.remove("emailreq_warning");
-    }
-    if (inputdata.email.length < 1) {
-      document.querySelector("#email_req").classList.add("emailreq_warning");
-      document
-        .querySelector("#email_invalid")
-        .classList.remove("email_warning");
-    }
-    var email_space = /^\s/g;
-    if (inputdata.email.match(email_space)) {
-      document
-        .querySelector("#email_space")
-        .classList.add("emailspace_warning");
-    } else {
-      document
-        .querySelector("#email_space")
-        .classList.remove("emailspace_warning");
-    }
-  }
 
-  function Phone() {
-    if (inputdata.phoneno.length === 10) {
-      document.getElementById("phoneinput_warning").style.borderColor = "black";
-      document.querySelector("#no_limit").classList.remove("nolimit_warning");
-    } else {
-      document.getElementById("phoneinput_warning").style.borderColor = "red";
-    }
-    if (inputdata.phoneno.length > 10) {
-      document.querySelector("#no_limit").classList.add("nolimit_warning");
-    } else {
-      document.querySelector("#no_limit").classList.remove("nolimit_warning");
-    }
-    if (inputdata.phoneno.length < 1) {
-      document.querySelector("#no_limit").classList.remove("nolimit_warning");
-      document.querySelector("#no_req").classList.add("noreq_warning");
-    }
-    if (inputdata.phoneno.length > 0) {
-      document.querySelector("#no_req").classList.remove("noreq_warning");
-    }
-    var digit = /[^0-9]/g;
-    if (inputdata.phoneno.match(digit)) {
-      document.querySelector("#digits").classList.add("digits_warning");
-    } else {
-      document.querySelector("#digits").classList.remove("digits_warning");
-    }
-  }
-  function Age() {
-    if (inputdata.age < 20 || inputdata.age > 75) {
-      document.getElementById("ageinput_warning").style.borderColor = "red";
-    } else {
-      document.getElementById("ageinput_warning").style.borderColor = "black";
-    }
-  }
-  function dob() {
-    if (inputdata.dob === "") {
-      document.querySelector("#dob_limit").classList.remove("doblimit_warning");
-    }
-  }
 
-  function address() {
-    if (inputdata.address.length > 152) {
-      document
-        .querySelector("#address_limit")
-        .classList.add("addresslimit_warning");
-      document.getElementById("addressinput_warning").style.borderColor = "red";
-    } else {
-      document
-        .querySelector("#address_limit")
-        .classList.remove("addresslimit_warning");
-      document.getElementById("addressinput_warning").style.borderColor =
-        "black";
-    }
-    if (inputdata.address.length < 1) {
-      document
-        .querySelector("#address_req")
-        .classList.add("addressreq_warning");
-      document.getElementById("addressinput_warning").style.borderColor = "red";
-    } else {
-      document
-        .querySelector("#address_req")
-        .classList.remove("addressreq_warning");
-    }
 
-    var address_space = /^\s/g;
-    if (inputdata.address.match(address_space)) {
-      document
-        .querySelector("#address_space")
-        .classList.add("addressspace_warning");
-    } else {
-      document
-        .querySelector("#address_space")
-        .classList.remove("addressspace_warning");
-    }
-  }
 
   function submit() {
-    if (inputdata.username && inputdata.email && inputdata.phoneno && inputdata.age && inputdata.dob && inputdata.address) {
-      let array = userdata;
-      array.push({ ...inputdata });
-      console.log(array);
-      setuserdata([...array]);
 
-      setinputdata({
-        username: "",
-        email: "",
-        phoneno: "",
-        age: "",
-        dob: "",
-        address: "",
-      });
-    }
+    if(validation_name(inputdata.username).class=='pass'){
+        setsuccess(true);
 
-     
-     
-       setTimeout(function () {
-         document.getElementById("card").style.display = "none";
-       }, 2000);
-     
-
-       if (inputdata.username === "" && inputdata.email === "" && inputdata.phoneno ==="" && inputdata.age === "" && inputdata.dob === "" && inputdata.address === "") {
-setsuccess(false)
-       }
-    if (inputdata.username === "") {
-      document.querySelector("#name_req").classList.add("namereq_warning");
-      document.getElementById("input_warning").style.borderColor = "red";
+        setTimeout(() => {
+            setsuccess(false );
+        }, 2000);
     }
-    if (inputdata.email === "") {
-      document.querySelector("#email_req").classList.add("emailreq_warning");
-      document
-        .querySelector("#Emailinput_warning")
-        .classList.add("emailinput_warning");
+    else{
+        setinputdata({...inputdata,username:''})
     }
-    if (inputdata.phoneno === "") {
-      document.querySelector("#no_req").classList.add("noreq_warning");
-      document.getElementById("phoneinput_warning").style.borderColor = "red";
-    }
-    if (inputdata.age === "") {
-      document.querySelector("#age_req").classList.add("agereq_warning");
-      document.getElementById("ageinput_warning").style.borderColor = "red";
-    }
-    if (inputdata.dob === "") {
-      document.querySelector("#dob_req").classList.add("dobreq_warning");
-      document.getElementById("dobinput_warning").style.borderColor = "red";
-    }
-    if (inputdata.address === "") {
-      document.getElementById("addressinput_warning").style.borderColor = "red";
-      document
-        .querySelector("#address_req")
-        .classList.add("addressreq_warning");
-    }
-
-    var above = /^2[0-9]|7[0-5]$/;
-    if (above.test(inputdata.age)) {
-      document.querySelector("#age_limit").classList.remove("agelimit_warning");
-    }
-    var below = /^0[0-9]|1[0-9]$/;
-    if (below.test(inputdata.age)) {
-      document.querySelector("#age_limit").classList.add("agelimit_warning");
-    }
-    var over = /^7[0-6]|9[0-9]$/;
-    if (over.test(inputdata.age)) {
-      document.querySelector("#age_limit").classList.add("agelimit_warning");
-    }
-
-    if (
-      moment(inputdata.dob).isBetween("1955-12-31", "1999-01-01", "year") ||
-      inputdata.dob === ""
-    ) {
-      document.querySelector("#dob_limit").classList.remove("doblimit_warning");
-    } else {
-      document.querySelector("#dob_limit").classList.add("doblimit_warning");
-    }
+    
+    
   }
+
+
+
   return (
     <>
       <div className="validate d-flex flex-column">
@@ -262,15 +62,17 @@ setsuccess(false)
                 </label>
                 <input
                   id="input_warning"
-                  value={inputdata.username}
+                  value={inputdata.username != 'not_selected' ? inputdata.username : ''}
                   onKeyUp={username}
                   onChange={(e) =>
                     setinputdata({ ...inputdata, username: e.target.value })
                   }
+                  onBlur={(e) => setinputdata({ ...inputdata, username: e.target.value })}
                   type="name"
-                  className="form-control name_input"
+                  className={validation_name(inputdata.username)}
                 ></input>
               </div>
+              {validation_name(inputdata.username).msg}
               <p className="space" id="space">
                 Please Check Your Fields For Spaces
               </p>
@@ -288,7 +90,7 @@ setsuccess(false)
                 Username is must be less than 10 characters
               </p>
             </div>
-            <div className="col-2">
+            {/* <div className="col-2">
               <div className="mb-3 ">
                 <label
                   for="exampleFormControlInput1"
@@ -431,13 +233,13 @@ setsuccess(false)
                   Address should be more than 252 characters
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="col-4 m-3">
             <button
               onClick={() => {
-                setsuccess(true);
+                
                 submit();
               }}
               type="button"

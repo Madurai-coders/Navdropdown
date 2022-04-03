@@ -21,7 +21,11 @@ function Validate() {
 
   console.log(inputdata);
 
-  const [userdata, setuserdata] = useState([]);
+  const [userdata, setuserdata] = useState([
+    {username:"priya",email:"nilapriya23@gmail.com",phoneno:"9578375007",age:"23",dob:"12-03-1996",address:"12-rajamroad"},
+    {username:"riya",email:"riya67@gmail.com",phoneno:"9578375008",age:"28",dob:"12-03-1993",address:"22-rajamroad"}
+
+  ]);
 
   function submit() {
     if (
@@ -112,9 +116,18 @@ function Validate() {
 
 
 
-  function Edit (){
+  function Edit (value){
 
-   
+   console.log(value)
+
+   setinputdata({
+    username: value.username,
+    email: value.email,
+    phoneno: value.phoneno,
+    age: value.age,
+    dob:value.dob,
+    address: value.address,
+  });
 
 
 }
@@ -324,7 +337,7 @@ function Validate() {
                     <td>{value.age}</td>
                     <td>{value.dob}</td>
                     <td>{value.address}</td>
-                    <td><i class="fa fa-pencil-square-o" onClick={Edit} aria-hidden="true"></i>
+                    <td><i class="fa fa-pencil-square-o" onClick={()=>Edit(value)} aria-hidden="true"></i>
 </td>
                   </tr>
                 );

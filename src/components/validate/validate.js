@@ -1,51 +1,124 @@
 import "./validate.css";
 import React, { useState } from "react";
-import moment from "moment";
 import { validation_name } from "./validate_functions";
+import { validation_Email } from "./validate_functions";
+import { validation_phoneno } from "./validate_functions";
+import { validation_age } from "./validate_functions";
+import { validation_date } from "./validate_functions";
+import { validation_address } from "./validate_functions";
+
 function Validate() {
-
-
   const [success, setsuccess] = useState(false);
 
   const [inputdata, setinputdata] = useState({
     username: "not_selected",
-    email: "",
-    phoneno: "",
-    age: "",
-    dob: "",
-    address: "",
+    email: "not_selected",
+    phoneno: "not_selected",
+    age: "not_selected",
+    dob: "not_selected",
+    address: "not_selected",
   });
 
   console.log(inputdata);
 
-
   const [userdata, setuserdata] = useState([]);
 
-
-
-
-
-
-
-
-
   function submit() {
-
-    if(validation_name(inputdata.username).class=='pass'){
-        setsuccess(true);
-
-        setTimeout(() => {
-            setsuccess(false );
-        }, 2000);
-    }
-    else{
-        setinputdata({...inputdata,username:''})
-    }
+    if (
+      validation_name(inputdata.username).class === "pass" &&
+      validation_Email(inputdata.email).class === "pass" &&
+      validation_phoneno(inputdata.phoneno).class === "pass" &&
+      validation_age(inputdata.age).class === "pass" &&
+      validation_date(inputdata.dob).class === "pass" &&
+      validation_address(inputdata.address).class === "pass"
+    ) {
+      let array = userdata;
+      array.push({ ...inputdata});
+      console.log(array);
+      setuserdata([...array]);
     
-    
+
+      setinputdata({
+        username: "not_selected",
+        email: "not_selected",
+        phoneno: "not_selected",
+        age: "not_selected",
+        dob: "not_selected",
+        address: "not_selected",
+      });
+
+      setsuccess(true);
+
+      setTimeout(() => {
+        setsuccess(false);
+      }, 3000);
+    } 
+   else  if (inputdata.username == "not_selected") {
+      setinputdata({
+        ...inputdata,
+        username: "",
+      });
+    }
+    if (inputdata.email == "not_selected") {
+      setinputdata({
+        ...inputdata,
+        email: "",
+      });
+    }
+    if (inputdata.phoneno == "not_selected") {
+      setinputdata({
+        ...inputdata,
+        phoneno: "",
+      });
+    }
+    if (inputdata.age == "not_selected") {
+      setinputdata({
+        ...inputdata,
+        age: "",
+      });
+    }
+    if (inputdata.dob == "not_selected") {
+      setinputdata({
+        ...inputdata,
+        dob: "",
+      });
+    }
+    if (inputdata.address == "not_selected") {
+      setinputdata({
+        ...inputdata,
+        address: "",
+      });
+    }
+
+    if (
+      inputdata.username == "not_selected" &&
+      inputdata.email == "not_selected" &&
+      inputdata.phoneno == "not_selected" &&
+      inputdata.age == "not_selected" &&
+      inputdata.dob == "not_selected" &&
+      inputdata.address == "not_selected"
+    ) {
+      setinputdata({
+        username: "",
+        email: "",
+        phoneno: "",
+        age: "",
+        dob: "",
+        address: "",
+      });
+    }
   }
 
 
+
+
+  function Edit (){
+
+   
+
+
+}
+  
 
   return (
     <>
@@ -62,35 +135,26 @@ function Validate() {
                 </label>
                 <input
                   id="input_warning"
-                  value={inputdata.username != 'not_selected' ? inputdata.username : ''}
-                  onKeyUp={username}
+                  value={
+                    inputdata.username != "not_selected"
+                      ? inputdata.username
+                      : ""
+                  }
+                  onKeyUp={validation_name}
                   onChange={(e) =>
                     setinputdata({ ...inputdata, username: e.target.value })
                   }
-                  onBlur={(e) => setinputdata({ ...inputdata, username: e.target.value })}
+                  onBlur={(e) =>
+                    setinputdata({ ...inputdata, username: e.target.value })
+                  }
                   type="name"
-                  className={validation_name(inputdata.username)}
+                  className="username"
                 ></input>
               </div>
+
               {validation_name(inputdata.username).msg}
-              <p className="space" id="space">
-                Please Check Your Fields For Spaces
-              </p>
-              <p className="letters" id="letters">
-                Only letters
-                
-              </p>
-              <p className="name_req" id="name_req">
-                Username is Required
-              </p>
-              <p className="name_long" id="name_long">
-                Username is must be longer than 4 characters
-              </p>
-              <p className="name_limit" id="name_limit">
-                Username is must be less than 10 characters
-              </p>
             </div>
-            {/* <div className="col-2">
+            <div className="col-2">
               <div className="mb-3 ">
                 <label
                   for="exampleFormControlInput1"
@@ -100,24 +164,21 @@ function Validate() {
                 </label>
                 <input
                   id="Emailinput_warning"
-                  type="email"
-                  className="form-control email_input"
-                  value={inputdata.email}
-                  onKeyUp={Email}
+                  type="name"
+                  className="email"
+                  value={
+                    inputdata.email != "not_selected" ? inputdata.email : ""
+                  }
+                  onKeyUp={validation_Email}
                   onChange={(e) =>
                     setinputdata({ ...inputdata, email: e.target.value })
                   }
+                  onBlur={(e) =>
+                    setinputdata({ ...inputdata, email: e.target.value })
+                  }
                 ></input>
-                <p className="email_space" id="email_space">
-                  Please Check Your Fields For Spaces
-                </p>
-                <p className="email_req" id="email_req">
-                  Email is required
-                </p>
-                <p className="email_invalid" id="email_invalid">
-                  Email Invalid
-                </p>
               </div>
+              {validation_Email(inputdata.email).msg}
             </div>
 
             <div className="col-2">
@@ -130,24 +191,20 @@ function Validate() {
                 </label>
                 <input
                   type="text"
-                  value={inputdata.phoneno}
                   id="phoneinput_warning"
-                  onKeyUp={Phone}
+                  value={
+                    inputdata.phoneno != "not_selected" ? inputdata.phoneno : ""
+                  }
+                  onKeyUp={validation_phoneno}
                   onChange={(e) =>
                     setinputdata({ ...inputdata, phoneno: e.target.value })
                   }
-                  className="form-control phoneno_input"
+                  onBlur={(e) =>
+                    setinputdata({ ...inputdata, phoneno: e.target.value })
+                  }
+                  className="phoneno"
                 ></input>
-                <p className="digits" id="digits">
-                  Digits only
-                </p>
-
-                <p className="no_req" id="no_req">
-                  Phone no is required
-                </p>
-                <p className="no_limit" id="no_limit">
-                  phone no should be 10 digits
-                </p>
+                {validation_phoneno(inputdata.phoneno).msg}
               </div>
             </div>
             <div className="col-1">
@@ -157,24 +214,22 @@ function Validate() {
                 </label>
 
                 <input
-                  value={inputdata.age}
-                  onKeyUp={Age}
+                  value={inputdata.age != "not_selected" ? inputdata.age : ""}
                   type="number"
-                  className="form-control age_input"
+                  className="age_input"
                   id="ageinput_warning"
                   name="quantity"
                   min="20"
                   max="75"
+                  onKeyUp={validation_age}
                   onChange={(e) =>
                     setinputdata({ ...inputdata, age: e.target.value })
                   }
+                  onBlur={(e) =>
+                    setinputdata({ ...inputdata, age: e.target.value })
+                  }
                 ></input>
-                <p className="age_req" id="age_req">
-                  Age is required
-                </p>
-                <p className="age_limit" id="age_limit">
-                  Your age is not eligible
-                </p>
+                {validation_age(inputdata.age).msg}
               </div>
             </div>
             <div className="col-2">
@@ -186,23 +241,20 @@ function Validate() {
                   Date of Birth
                 </label>
                 <input
-                  onKeyUp={dob}
-                  value={inputdata.dob}
+                  value={inputdata.dob != "not_selected" ? inputdata.dob : ""}
                   type="date"
+                  onKeyUp={validation_date}
                   onChange={(e) =>
                     setinputdata({ ...inputdata, dob: e.target.value })
                   }
-                  className="form-control dob_input "
+                  onBlur={(e) =>
+                    setinputdata({ ...inputdata, dob: e.target.value })
+                  }
+                  className=" dob_input "
                   id="dobinput_warning"
                 ></input>
-                <p className="dob_req" id="dob_req">
-                  Data of birth is Required
-                </p>
+                {validation_date(inputdata.dob).msg}
               </div>
-
-              <p className="dob_limit" id="dob_limit">
-                Data of birth is Invalid
-              </p>
             </div>
             <div className="col-3">
               <div className="mb-3 ">
@@ -213,33 +265,29 @@ function Validate() {
                   Address
                 </label>
                 <input
-                  value={inputdata.address}
-                  onKeyUp={address}
-                  placeholder="Flat NO/Street/Area/District"
+                  value={
+                    inputdata.address != "not_selected" ? inputdata.address : ""
+                  }
+                  placeholder="Flat no/Street/Area/District"
                   type="text"
+                  onKeyUp={validation_address}
                   onChange={(e) =>
                     setinputdata({ ...inputdata, address: e.target.value })
                   }
-                  className="form-control address_input"
+                  onBlur={(e) =>
+                    setinputdata({ ...inputdata, address: e.target.value })
+                  }
+                  className=" address_input"
                   id="addressinput_warning"
                 ></input>
-                <p className="address_space" id="address_space">
-                  Please Check Your Fields For Spaces
-                </p>
-                <p className="address_req" id="address_req">
-                  Address is required
-                </p>
-                <p className="address_limit" id="address_limit">
-                  Address should be more than 252 characters
-                </p>
+                {validation_address(inputdata.address).msg}
               </div>
-            </div> */}
+            </div>
           </div>
 
           <div className="col-4 m-3">
             <button
               onClick={() => {
-                
                 submit();
               }}
               type="button"
@@ -260,6 +308,9 @@ function Validate() {
                 <th scope="col">Age</th>
                 <th scope="col">Date of Birth</th>
                 <th scope="col">Address</th>
+                <th scope="col">Control</th>
+
+                
               </tr>
             </thead>
 
@@ -273,12 +324,14 @@ function Validate() {
                     <td>{value.age}</td>
                     <td>{value.dob}</td>
                     <td>{value.address}</td>
+                    <td><i class="fa fa-pencil-square-o" onClick={Edit} aria-hidden="true"></i>
+</td>
                   </tr>
                 );
               })}
             </tbody>
           </table>
-          {success && ( 
+          {success && (
             <>
               <div className="col-6">
                 <div className="overlay text-center" id="card">

@@ -16,371 +16,268 @@
   height: 100vh;
   overflow: hidden;
 }
+/* username */
 .name_txt {
   position: relative;
   left: 20px;
   font-size: 13px;
 }
-.name_input {
+.username {
   width: 95%;
   height: 30px;
   position: relative;
   left: 20px;
   border: 1px solid black;
 }
+.name_req {
+  position: absolute;
+  bottom: -10px;
+  left: 35px;
+  color: red;
+}
+.namespace_start {
+  position: absolute;
+  bottom: -11px;
+  left: 35px;
+  color: red;
+  line-height: 12px;
+}
+.namespace_end {
+  position: absolute;
+  bottom: -11px;
+  left: 35px;
+  color: red;
+  line-height: 12px;
+}
+.namelimit_above {
+  position: absolute;
+  bottom: -10px;
+  color: red;
+  left: 35px;
+}
+.namelimit_below {
+  position: absolute;
+  bottom: -10px;
+  color: red;
+  left: 35px;
+}
+.nameletters_only {
+  position: absolute;
+  bottom: -11px;
+  left: 35px;
+  color: red;
+  line-height: 12px;
+}
 
+/* email */
+.email {
+  width: 95%;
+  height: 30px;
+  position: relative;
+  left: 10px;
+  border: 1px solid black;
+}
 .email_txt {
   position: relative;
   left: 10px;
- font-size: 13px;
+  font-size: 13px;
 }
-.email_input {
+.email_req {
+  position: absolute;
+  bottom: -10px;
+  left: 25px;
+  line-height: 12px;
+  color: red;
+}
+.emailstart_space {
+  position: absolute;
+  bottom: -11px;
+  left: 36px;
+  line-height: 12px;
+  color: red;
+}
+.emailend_space {
+  position: absolute;
+  bottom: -11px;
+  left: 35px;
+  color: red;
+  line-height: 12px;
+}
+.invalid_email {
+  position: absolute;
+  bottom: -10px;
+  left: 35px;
+  color: red;
+  line-height: 12px;
+}
+
+/* phone */
+
+.phone_txt {
+  font-size: 13px;
+  position: relative;
+  left: 1px;
+}
+.phoneno {
   width: 95%;
   height: 30px;
   position: relative;
-  left: 10px;
   border: 1px solid black;
 }
-.phone_txt{
+.no_req {
+  color: red;
+  position: absolute;
+  left: 17px;
+  bottom: -10px;
+  line-height: 12px;
+}
+.digits_only {
+  position: absolute;
+  color: red;
+  left: 20px;
+  bottom: -10px;
+  line-height: 12px;
+}
+.phoneno_limit {
+  color: red;
+  position: absolute;
+  left: 20px;
+  bottom: -10px;
+  line-height: 12px;
+}
+.nospace_start {
+  color: red;
+  position: absolute;
+  left: 27px;
+  bottom: -11px;
+  line-height: 12px;
+}
+.nospace_end {
+  color: red;
+  position: absolute;
+  left: 27px;
+  bottom: -11px;
+  line-height: 12px;
+}
+
+/* age */
+.age_txt {
   font-size: 13px;
 }
-.phoneno_input {
-  width: 95%;
+.age_input {
   height: 30px;
+  width: 95%;
+  border: 1px solid black;
+}
+
+.age_req {
+  color: red;
+  position: absolute;
+  left: 13px;
+  bottom: -12px;
+  line-height: 12px;
+}
+.age_warning {
+  color: red;
+  position: absolute;
+  left: 13px;
+  bottom: -14px;
+  line-height: 14px;
+}
+/* dob */
+.dob_txt {
+  font-size: 13px;
+}
+.dob_input {
+  height: 30px;
+  width: 95%;
   position: relative;
   border: 1px solid black;
 }
-.age_txt{
-  font-size: 13px;
-}
-.age_input{
-  height: 30px;
-}
-.dob_txt{
-  font-size: 13px;
-}
-.dob_input{
-  height: 30px;
-}
-.address_txt{
-  font-size: 13px;
-}
-.address_input{
-  height: 30px;
-  
+.date_req {
+  position: absolute;
+  left: 20px;
+  bottom: -12px;
+  line-height: 12px;
+  color: red;
 }
 
-input[type=date]{
-font-size: 11.5px;
-
+.date_warning {
+  color: red;
+  position: absolute;
+  left: 20px;
+  bottom: -12px;
+  line-height: 12px;
+}
+/* address */
+.address_txt {
+  font-size: 13px;
+}
+.address_input {
+  height: 30px;
+  width: 93.5%;
+  border: 1px solid black;
+}
+.address_req {
+  color: red;
+  position: absolute;
+  left: 20px;
+  bottom: -12px;
+  line-height: 12px;
+}
+.addressspace_start {
+  position: absolute;
+  left: 20px;
+  bottom: -12px;
+  line-height: 12px;
+  color: red;
+}
+.addressspace_end {
+  position: absolute;
+  left: 20px;
+  bottom: -12px;
+  line-height: 12px;
+  color: red;
+}
+.addresslimit_above {
+  position: absolute;
+  left: 20px;
+  bottom: -12px;
+  line-height: 12px;
+  color: red;
+}
+.addresslimit_below {
+  position: absolute;
+  left: 20px;
+  bottom: -12px;
+  line-height: 12px;
+  color: red;
+}
+.address_warning{
+  position: absolute;
+  color: red;
+  left: 20px;
+  bottom: -10px;
+  line-height: 12px;
+}
+input[type="date"] {
+  font-size: 11.5px;
 }
 input,
 input::-webkit-input-placeholder {
   font-size: 13px;
 }
 
-.nameinput_warning {
-  border-color: red;
-}
 .form-control:focus {
   border-color: inherit;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.name_req {
-  position: absolute;
-  bottom: -25px;
-  left: 35px;
-  color: red;
-  display: none;
-}
-.namereq_warning {
-  display: block;
-  position: absolute;
-  bottom: -20px;
-  left: 35px;
-  color: red;
-  font-size: 13px;
-}
-.name_long {
-  position: absolute;
-  left: 35px;
-  bottom: -47px;
-  color: red;
-  display: none;
-}
-.namelong_warning {
-  display: block;
-  position: absolute;
-  left: 35px;
-  bottom: -29px;
-  color: red;
-  font-size: 13px;
-  line-height: 13px;
-}
-.space{
-  font-size: 13px;
-  color: red;
-  position: absolute;
-  bottom: -30px;
-  left: 35px;
-  line-height: 13px;
-  display: none;
-}
-.space_warning{
-  display: block;
-}
-.name_limit{
-  font-size: 13px;
-  color: red;
-  position: absolute;
-  line-height: 13px;
-  bottom: -30px;
-  left: 35px;
-  display: none;
-}
-.namelimit_warning{
-  display: block;
-}
-.email_space{
-  font-size: 13px;
-  color: red;
-  position: absolute;
-  bottom: -30px;
-  left: 30px;
-  line-height: 13px;
-  display: none;
-}
-.emailspace_warning{
-  display: block;
-}
-.no_space{
-  font-size: 13px;
-  color: red;
-  position: absolute;
-  bottom: -30px;
-  left: 20px;
-  line-height: 14px; 
-  display:none;
-}
-.nospace_warning{
-  display: block;
-}
-.letters{
-  display: none;
-}
-.letters_warning{
-  display: block;
-  position: absolute;
-  color: red;
-  font-size: 13px;
-  left: 35px;
-  bottom: -20px;
-}
-.emailinput_warning {
-  border-color: red;
-}
-.email_req {
-  position: absolute;
-  left: 26px;
-  color: red;
-  bottom: -25px;
-  display: none;
-}
-.emailreq_warning {
-  display: block;
-  font-size: 13px;
-  position: absolute;
- 
-  bottom: -20px;
-
-}
-.email_invalid {
-  position: absolute;
-  left: 26px;
-  color: red;
-  bottom: -25px;
-  display: none;
-}
-.email_warning {
-  position: absolute;
-  left: 26px;
-  color: red;
-  bottom: -20px;
-  display: block;
-  font-size: 13px;
-}
-
-.no_req {
-  color: red;
-  position: absolute;
-  bottom: 0px;
-  left: 15px;
-  display: none;
-}
-.noreq_warning {
-  color: red;
-  position: absolute;
-  bottom: -20px;
-  left: 15px;
-  font-size: 13px;
-  display: block;
-}
-.no_limit {
-  color: red;
-  position: absolute;
-  left: 15px;
-  display: none;
-}
-.nolimit_warning {
-  color: red;
-  position: absolute;
-  left: 15px;
-  display: block;
-  font-size: 13px;
-}
-.no_only {
-  color: red;
-  position: absolute;
-  left: 15px;
-  display: none;
-}
-.noonly_warning{
-  display: block;
-}
-.digits{
-  color: red;
-  font-size: 13px;
-  position: absolute;
-  left: 20px;
-  display: none;
-}
-.digits_warning{
-  display: block;
-}
-.age_input {
-  width: 95%;
-  border: 1px solid black;
-}
-.age_req {
-  color: red;
-  position: absolute;
-  bottom: -25px;
-  left: 17px;
-  display: none;
-}
-.agereq_warning {
-  color: red;
-  position: absolute;
-  bottom: -20px;
-  left: 17px;
-  font-size: 13px;
-  display: block;
-  line-height: 15px;
-}
-.age_limit {
-  color: red;
-  position: absolute;
-  bottom: -45px;
-  left: 17px;
-  font-size: 15px;
-  display: none;
-}
-.agelimit_warning {
-  color: red;
-  position: absolute;
-  bottom: -32px;
-  left: 17px;
-  font-size: 12px;
-  line-height: 15px;
-  display: block;
-}
-.address_space{
-  font-size: 12px;
-  color: red;
-  position: absolute;
-  line-height: 14px;
-  display: none;
-}
-.addressspace_warning{
-  display: block;
-}
-.dob_input {
-  width: 95%;
-  position: relative;
-  border: 1px solid black;
-}
-.dob_req {
-  color: red;
-  position: absolute;
-  bottom: -25px;
-  left: 17px;
-  display: none;
-}
-.dobreq_warning {
-  color: red;
-  position: absolute;
-  bottom: -20px;
-  left: 17px;
-  font-size: 13px;
-  display: block;
-}
-.dob_limit {
-  color: red;
-  position: absolute;
-  bottom: -25px;
-  left: 17px;
-  font-size: 15px;
-  display: none;
-}
-.doblimit_warning {
-  color: red;
-  position: absolute;
-  bottom: -20px;
-  left: 17px;
-  font-size: 13px;
-  display: block;
-}
-
-.address_input {
-  width: 93.5%;
-  border: 1px solid black;
-}
-
-.address_req {
-  color: red;
-  position: absolute;
-  bottom: -25px;
-  left: 17px;
-  font-size: 15px;
-  display: none;
-}
-.addressreq_warning {
-  color: red;
-  position: absolute;
-  bottom: -20px;
-  left: 17px;
-  font-size: 13px;
-  display: block;
-}
-.address_limit{
-  font-size: 13px;
-  position: absolute;
-  bottom: -30px;
-  line-height: 15px;
-  color: red;
-  left: 17px;
-  display: none;
-}
-.addresslimit_warning{
-  display: block;
-}
 
 .submit {
- position: absolute;
- left: 5px;
+  position: absolute;
+  left: 5px;
   font-size: 12px;
-  
 }
 .tbl {
   padding: 0;
@@ -397,198 +294,102 @@ input::-webkit-input-placeholder {
 .tbdy {
   display: block;
   max-height: 395px;
-  
 }
 thead,
-tbody tr{
+tbody tr {
   display: table;
   width: 100%;
   table-layout: fixed;
-  
 }
-
 
 thead {
   width: calc(100% - 1em);
 }
-.overlay{
-  position: fixed; /* Sit on top of the page content */
-  width: 20%; /* Full width (cover the whole page) */
-  height: 20%; /* Full height (cover the whole page) */
+.overlay {
+  position: fixed;
+  width: 20%;
+  height: 20%;
   top: 60%;
   left: 40%;
   right: 0;
   bottom: 0;
-  background-color: white; /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
-  box-shadow: 1px 1px 1px 1px  rgba(0,0,0,0.2);
+  background-color: white;
+  z-index: 2;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-
-
-.successfully{
+.successfully {
   font-size: 50px;
-  color:rgb(25,135,84) ;
+  color: rgb(25, 135, 84);
 }
-@media only screen and (max-width: 1153px) {
-  .namelong_warning{
-font-size: 11px;
+
+/* media */
+
+@media only screen and (max-width: 1127px) {
+  .name_req{
+font-size: 13px;
   }
-  .heading{
+  .email_req{
     font-size: 13px;
   }
-  .agereq_warning{
-    position: absolute;
-    bottom: -30px;
+  .no_req{
+    font-size: 13px;
+  }
+  .age_req{
+    font-size: 13px;
+  }
+  .date_req{
+    font-size: 13px;
+  }
+  .address_req{
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 1060px) {
+  .name_req{
+font-size: 13px;
+line-height: 11px;
+bottom: -10px;
+  }
+  .age_warning{
+    font-size: 12px;
+  }
+  .phoneno_limit{
+  font-size:13px ;
+}
+}
+@media only screen and (max-width: 985px) {
+  .age_req{
+    bottom: -15px;
+    line-height: 8px;
+  }
+.namespace_start{
+  font-size: 13px;
+}
+.namespace_end{
+  font-size: 13px;
+}
+.emailstart_space{
+  font-size: 13px;
+}
+.emailend_space{
+  font-size: 13px;
+}
+}
+@media only screen and (max-width: 878px) {
+  .namespace_start{
+    font-size: 12px;
+  }
+  .namespace_end{
+    font-size: 12px;
+  }
+  .emailstart_space{
+    font-size: 12px;
+  }
+  .emailend_space{
+    font-size: 12px;
   }
  
-  
-}
-@media only screen and (max-width: 1053px) {
-  .namereq_warning{
-    font-size: 12px;
   }
 
-  .emailreq_warning{
-    font-size: 12px;
-  }
-  .noreq_warning{
-    font-size: 12px;
-  }
-  .nolimit_warning{
-    line-height: 15px;
-  }
-  .agereq_warning{
-    font-size: 11px;
-  }
-.agelimit_warning{
-  font-size: 11px;
-}
-.dobreq_warning{
-  font-size: 12px;
-}
-.addresslimit_warning{
-  font-size: 12px;
-}
-}
-@media only screen and (max-width: 1016px) {
-  .namelong_warning{
-font-size: 10px;
-line-height: 10px;
-position: absolute;
-bottom: -24px
-
-  }
-}
-@media only screen and (max-width: 986px) {
-  .namereq_warning{
-    position: absolute;
-    bottom: -32px;
-    line-height: 15px;
-  }
-  .emailreq_warning{
-    font-size: 12px;
-  }
-  .nolimit_warning{
-    font-size: 11px;
-  }
-  .dobreq_warning{
-    font-size: 11px;
-  }
-  .agereq_warning{
-    font-size: 11px;
-  }
-  .addressreq_warning{
-    font-size: 12px;
-  }
-}
-@media only screen and (max-width: 944px) {
-  .namelong_warning{
-    font-size: 10px;
-    line-height: 10px;
-    position: absolute;
-    bottom: -32px;
-      }}
-
-@media only screen and (max-width: 930px) {
-  .namelong_warning{
-font-size: 10px;
-line-height: 10px;
-position: absolute;
-bottom: -31px;
-  }
-  .email_warning{
-    font-size: 12px;
-  }
-  .nolimit_warning{
-    line-height: 16px;
-    font-size: 11px;
-  }
-  .agelimit_warning{
-    position: absolute;
-    bottom: -35px;
-    font-size: 11px;
-    line-height: 11px;
-  }
-  .addresslimit_warning{
-    font-size: 11px;
-  }
-}
-@media only screen and (max-width: 881px) {
-  .dobreq_warning{
-    line-height: 14px;
-    position: absolute;
-    bottom: -30px;
-  }
-.addresslimit_warning{
-  font-size: 10px;
-}
-}
-@media only screen and (max-width: 811px) {
-  .noreq_warning{
-    position: absolute;
-    bottom: -30px;
-    line-height: 14px;
-  }
-  .agereq_warning{
-    font-size: 11px;
-    line-height: 13px;
-  }
-
-  }
-
-  @media only screen and (max-width: 776px) {
-    .addresslimit_warning{
-      font-size: 11px;
-    }}
-
-
-@media only screen and (max-width: 736px) {
-  .emailreq_warning{
-    position: absolute;
-    font-size: 12px;
-    bottom: -32px;
-    line-height: 15px;
-  }
-  
-}
-@media only screen and (max-width: 723px) {
-  .namelong_warning{
-font-size: 9px;
-line-height: 10px;
-position: absolute;
-bottom: -31px;
-  }
-}
-@media only screen and (max-width: 669px) {
-  .namelong_warning{
-font-size: 8px;
-line-height: 10px;
-position: absolute;
-bottom: -31px;
-  }
-  .heading{
-    font-size: 12px;
-  }
-}

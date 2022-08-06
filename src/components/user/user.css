@@ -1,7 +1,7 @@
 .user{
   
        height: 95vh;
-       background-color: blue;
+       background-color: rgb(255, 255, 255);
      overflow-y: scroll;
 }
 
@@ -9,7 +9,25 @@
   .user{
   
     height: 89vh;
-    background-color: blue;
+    background-color: rgb(255, 255, 255);
   overflow-y: scroll;
 }
 }
+
+.app {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.app__container {
+	margin-top: 10px;
+	width: 500px;
+	height: 500px;
+	border: 1px solid #000;
+}
+
+.app__input {
+	margin-top: 10px;
+} 

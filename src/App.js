@@ -20,13 +20,13 @@ function App() {
 
           <div className="flex-grow-1 " style={{ marginTop: "48px" }}>
             <Switch>
-              <Route path="/user" excat component={User}></Route>
-              <Route path="/message" excat component={Msg}></Route>
-              <Route path="/analytics" excat component={Alts}></Route>
-              <Route path="/order" excat component={Order}></Route>
-              <Route path="/saved" excat component={Save}></Route>
-              <Route path="/settings" excat component={Setting}></Route>
-              <Route path="/validate" excat component={Validate}></Route>
+              <Route exact component={User}></Route>
+              <Route path="/message" exact component={Msg}></Route>
+              <Route path="/analytics" exact component={Alts}></Route>
+              <Route path="/order" exact component={Order}></Route>
+              <Route path="/saved" exact component={Save}></Route>
+              <Route path="/settings" exact component={Setting}></Route>
+              <Route path="/validate" exact component={Validate}></Route>
 
             </Switch>
 
